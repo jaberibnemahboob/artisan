@@ -180,6 +180,9 @@ function showArtwork(artwork){
 }
 
 
+
+
+//HOW TO CALL FUNCTION TO LOAD INFORMATION FORM WORDPRESS SITE
 //getCategories();
 //getCategoryById(3);
 //getCategoryBySlug("candlestick");

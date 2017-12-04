@@ -16,10 +16,9 @@
     --headerColor:      #555555;
     --accentColor:      #f1a006;
     --highlight:        #7b0e0b;
-    --icons:            #f1a006;
 }
 body{font: var(--font_body); color: var(--textColor);}
-p,a,span,li,ul,ol,font{font: var(--font_regular); color: var(--textColor);}
+p,a,span,li,ul,ol,font{font: var(--font_regular); color: var(--textColor); text-decoration: none; list-style: none;}
 a:hover, a{color: var(--highlight);}
 h1{font: var(--font_h1); color: var(--textColor);}
 h2{font: var(--font_h2); color: var(--headerColor);}
@@ -29,23 +28,52 @@ h5{font: var(--font_h5); color: var(--headerColor);}
 h6{font: var(--font_h6); color: var(--headerColor);}
 nav a{text-decoration: none; font: var(--font_nav); color: var(--textColor);}
 nav a.active, nav a:hover{text-decoration: none; font: var(--font_nav); color: var(--highlight);}
-i{color: var(--icons);}
-.menuHeroPg{margin: 0.2em 0 0 0.2em;}
-.hamburgerMenu{color: var(--textColor); width:2em; height: 0.2em; background-color: var(--accentColor); margin: 0.5em 0 0 0.1em;}
-button{color: var(--highlight); background-color: var(--accentColor); margin: 0.2em; border-radius: 5px; border-color: rgba( 241, 160, 6, 0.5);}
+i{color: var(--accentColor);}
+.menuHeroPg{margin: 0 0 0 0.2em;}
+.hamburgerMenu{color: var(--textColor); width:4em; height: 0.5em;
+    background-color: var(--accentColor); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #7b0e0b, #f1a006); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #7b0e0b, #f1a006); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #7b0e0b, #f1a006); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #7b0e0b, #f1a006); /* Standard syntax */;
+    margin: 0.5em 0 0 0.1em; border-radius:  20px 5px 50px 5px;}
+button{color: var(--highlight); background-color: var(--accentColor); margin: 0.2em; border: none;}
+
+/**************** Extra Classes *******************/
+.displayNone{ display: none; }
+
+/**************** Navigation ****************/
+
+#offCanvasNav{width: 100%; height: auto; padding: 1em; display: none;}
+#offCanvasNav nav ul li{}
+#offCanvasNav nav ul li ul li{display: none;}
+
 
 /**** header ***/
-header{}
+header{display: flex;}
+#miniLogo{width: 15%; height: auto; margin-left: 16.5em; margin-top: 0.7em;}
+.menuHeroPg{ padding: 1em;}
+.indexHeader{ background-image: url(../images/heroBackground.jpg); }
+.arrowDown{width: 100%; height: auto; margin-top: 14em; padding-left: 7em;}
 
 
 /*HERO SECTION*/
-.heroSection .contentHolder{background-image: url(../images/heroBackground.jpg); background-size: cover; background-position: 50% 25%;}
+.heroImg{background-image: url(../images/heroBackground.jpg); background-size: cover; background-position: 50% 25%;}
+.heroSection .contentHolder {}
 .heroSection .contentHolder .content{height: 75vh;}
-.heroSection .contentHolder .content .logoHeroPage img{width: 20vw; height: auto; margin: 5em 0 0 3em;}
-.heroSection .contentHolder .content .logoHeroPage h1{ color: #ffffff; font-size: 3em; margin:-1.15em 0 0 2.4em;}
+header .heroSection .contentHolder .content .logoHeroPage img{width: 20vw; height: auto; margin: 12em 0 0 -2em;}
+header .heroSection .contentHolder .content .logoHeroPage h1{ color: #ffffff; font-size: 3em; margin:-1.2em 0 0 1.5em;}
 
 /********** CONTENT STYLING FOR THE HOME PAGE DIRECTLY UNDER THE HERO SECTION ***********/
 .content{width: 100%; height: auto;  margin: 1em;}
-.shortDescription{width: 85%; height: auto; box-shadow: 5px 5px 5px var(--headerColor); padding: 1em; margin: 1em;}
+.shortDescription{width: 90%; height: auto; box-shadow: 2px 3px 5px var(--headerColor); padding: 1em;}
+
+
+/************ footer ***************/
+
+footer { width: 100%; height: auto; }
+footer .footerInfo{ width: 100%; height: auto; margin:1em;}
+footer .footerInfo ul li{margin-left: -3em;}
+
 
 

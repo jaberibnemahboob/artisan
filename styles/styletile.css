@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
-
+*{box-sizing: border-box; margin: 0; padding: 0;}
 :root{
     --font_body:    300 13px 'Ubuntu', sans-serif;
     --font_regular: 300 1.0em 'Ubuntu', sans-serif;
@@ -57,6 +57,10 @@ header{display: flex;}
 .arrowDown{width: 100%; height: auto; margin-top: 14em; padding-left: 7em;}
 
 
+/**************** heading *****************/
+#pageHeading{margin: 0.5em 0 0.5em 1em;}
+
+
 /*HERO SECTION*/
 .heroImg{background-image: url(../images/heroBackground.jpg); background-size: cover; background-position: 50% 25%;}
 .heroSection .contentHolder {}
@@ -64,16 +68,23 @@ header{display: flex;}
 header .heroSection .contentHolder .content .logoHeroPage img{width: 20vw; height: auto; margin: 12em 0 0 -2em;}
 header .heroSection .contentHolder .content .logoHeroPage h1{ color: #ffffff; font-size: 3em; margin:-1.2em 0 0 1.5em;}
 
+
 /********** CONTENT STYLING FOR THE HOME PAGE DIRECTLY UNDER THE HERO SECTION ***********/
 .content{width: 100%; height: auto;  margin: 1em;}
 .shortDescription{width: 90%; height: auto; box-shadow: 2px 3px 5px var(--headerColor); padding: 1em;}
 
 
+/********** CONTENT STYLING FOR THE HOME PAGE DIRECTLY UNDER THE HERO SECTION ***********/
+.contentThumbs {width: 100%; display: flex; flex-wrap: wrap;}
+.prodThumbnail{width: 45%; height: auto; margin-right: 0.5em; box-shadow: 2px 3px 5px var(--headerColor); padding: 1em;}
+.prodThumbnail .prodThumbImg img{ width: 100%; height: auto; }
+
+
+
 /************ footer ***************/
 
 footer { width: 100%; height: auto; }
-footer .footerInfo{ width: 100%; height: auto; margin:1em;}
-footer .footerInfo ul li{margin-left: -3em;}
+footer .footerInfo{ width: 100%; height: auto; margin:1em; border-left: solid 0.2em var(--accentColor); padding-left: 0.5em;}
 
 
 

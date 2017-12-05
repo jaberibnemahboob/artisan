@@ -9,7 +9,7 @@
     --font_h4:      500 1.5em 'Ubuntu', sans-serif;
     --font_h5:      500 1.3em 'Ubuntu', sans-serif;
     --font_h6:      500 1.1em 'Ubuntu', sans-serif;
-    --font_nav:     400 1.2em 'Ubuntu', sans-serif;
+    --font_nav:     400 1.5em 'Ubuntu', sans-serif;
 
     --textColor:        #34343e;
     --backgroundColor:  #ffffff;
@@ -41,20 +41,30 @@ button{color: var(--highlight); background-color: var(--accentColor); margin: 0.
 
 /**************** Extra Classes *******************/
 .displayNone{ display: none; }
+.borderNone{ border: none;}
+.hidden{ display: none;}
+.displayBlock{display: block;}
+
+/************************ animations ************************/
+.arrow_carrot { margin-right: 1em; transform: rotate(-90deg); animation: rotatingArrow ease 2s;}
+@keyframes rotatingArrow { to { transition: all 1s; } from { transition: all 1s; } }
 
 /**************** Navigation ****************/
 
-#offCanvasNav{width: 100%; height: auto; padding: 1em; display: none;}
-#offCanvasNav nav ul li{}
-#offCanvasNav nav ul li ul li{display: none;}
+#offCanvasNav{width: 100%; height: auto; padding: 1em; background-color: white; position: absolute;}
+#offCanvasNav nav ul li{border-bottom: solid 0.1em rgba(85, 85, 85, 0.2); margin: 2em 0 0 2.5em; width: 80%;}
+#offCanvasNav nav ul li:last-child{margin-bottom: 3em;}
+#offCanvasNav nav ul li a{ margin: 0 0 0.5em 0.5em;}
+#offCanvasNav nav ul li ul li:last-child{border: none;}
+#times_nav_header{font-size: 3em;}
 
 
 /**** header ***/
 header{display: flex;}
 #miniLogo{width: 15%; height: auto; margin-left: 16.5em; margin-top: 0.7em;}
 .menuHeroPg{ padding: 1em;}
-.indexHeader{ background-image: url(../images/heroBackground.jpg); }
-.arrowDown{width: 100%; height: auto; margin-top: 14em; padding-left: 7em;}
+.indexHeader{ background-image: url(../images/heroBackgroundArtisan.jpg); width: 100%; height: auto; background-position: 50% 30%;}
+.arrowDown{width: 100%; height: auto; margin-top: 14em; padding-left: 6em;}
 
 
 /**************** heading *****************/
@@ -62,7 +72,7 @@ header{display: flex;}
 
 
 /*HERO SECTION*/
-.heroImg{background-image: url(../images/heroBackground.jpg); background-size: cover; background-position: 50% 25%;}
+.heroImg{background-image: url(../images/heroBackgroundArtisan.jpg); background-size: cover; background-position: 50% 25%; width: 100%; height: auto;}
 .heroSection .contentHolder {}
 .heroSection .contentHolder .content{height: 75vh;}
 header .heroSection .contentHolder .content .logoHeroPage img{width: 20vw; height: auto; margin: 12em 0 0 -2em;}

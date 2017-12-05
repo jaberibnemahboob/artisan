@@ -10,39 +10,39 @@
         <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.css">
     </head>
     <body>
-        <div id="offCanvasNav">
+        <aside id="offCanvasNav" class="hidden">
             <nav>
-                <a href="#"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>
+                <a href="#" class="hidden" onclick="toggleMenu()" id="times_nav_header"><i class="fa fa-times" aria-hidden="true"></i></a>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#">About</a>
-                        <ul>
+                    <li><a href="#"  onclick="toggleSubMenu()"> About <i id="subCategoryCaret" class="fa fa-chevron-left"></i></a>
+                        <ul id="subCategoryMenu" class="hidden">
                             <li><a href="biography.html">Biography</a></li>
                             <li><a href="process.html">Process</a></li>
                             <li><a href="exhibitions.html">Exhibitions</a></li>
                             <li><a href="workshops.html">Workshops</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Artwork</a>
-                        <ul>
-                            <li><a href="luxuryartworks.html">Artworks</a></li>
+                    <li><a href="#" onclick="toggleSubMenuArt()">Artwork <i id="subCategoryArtCaret" class="fa fa-chevron-left"></i></a>
+                        <ul id="subCategoryArt" class="hidden">
+                            <li><a href="luxuryartworks.html">Projects</a></li>
                             <li><a href="souvenirsshop.html">Shop</a></li>
                         </ul>
                     </li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-        </div>
+        </aside>
 
         <header class="indexHeader">
 
-            <a href="#">
+            <a href="#" onclick="toggleMenu()">
 
                 <div class="menuHeroPg">
 
-                    <div class="hamburgerMenu"></div>
-                    <div class="hamburgerMenu"></div>
-                    <div class="hamburgerMenu"></div>
+                    <div class="hamburgerMenu" id="line_1"></div>
+                    <div class="hamburgerMenu" id="line_2"></div>
+                    <div class="hamburgerMenu" id="line_3"></div>
 
                 </div>
 
@@ -137,6 +137,7 @@
         </footer>
 
         <script type="text/javascript" src="scripts/json_retriver.js"></script>
+        <script type="text/javascript" src="scripts/script.js"></script>
 
     </body>
 </html>

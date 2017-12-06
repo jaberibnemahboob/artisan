@@ -10,18 +10,9 @@ let subMenuArt = document.querySelector('#subCategoryArt');
 let subCaretCat = document.querySelector('#subCategoryCaret');
 let subCaretArt = document.querySelector('#subCategoryArtCaret');
 
-//myLink.addEventListener('click', openMenu);
+
 //USE WHEN READY TO TEST
-//myLink.addEventListener('touchend', rotateCarrot);
-
-//document.onload(menuSlide());
-
-/*
-function menuSlide() {
-
-   caret.classList.add('slide');
-}
-*/
+//myLink.addEventListener('touchend', arrow_carrot);
 
 
 function toggleMenu() {

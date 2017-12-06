@@ -90,10 +90,25 @@ header .heroSection .contentHolder .content .logoHeroPage h1{ color: #ffffff; fo
 .prodThumbnail .prodThumbImg img{ width: 100%; height: auto; }
 
 
+/************ Contact Page ***************/
+section{width: 100%; height: auto;}
+form{width: 100%;  min-height: 20vh;}
+.formLable{width: 100%; margin-left: 1em; float: left;}
+input{width: 90%; height: 2em; margin: 0.1em 0 1em 0.5em; float: left; box-shadow: 2px 3px 5px var(--headerColor); border:none;}
+textarea{width: 90%; height: auto; margin:0.1em 0 1em 0.5em; float: left; box-shadow: 2px 3px 5px var(--headerColor); border:none;}
+input[type="button"]{background-color: var(--accentColor); color: var(--highlight); border: none;  font-size: 1em; margin: 0.5em; box-shadow: 2px 3px 5px var(--headerColor);}
+#contentH3{margin: 1em 0 1em 0.3em}
+
+.contentHolder .content #mapFrame iframe{ width:90%; height: 40vh; margin: 1em 0 1em 0.5em;}
+#mapFrame h5{margin: 0.5em 0 0 0.3em;}
+
+#contactMessage{margin-left: 0.5em;}
+#contactMessage h3{ margin-bottom: 1em;}
+#contactMessage h5{ margin-bottom: 0.5em;}
 
 /************ footer ***************/
 
-footer { width: 100%; height: auto; }
+footer { width: 100%; height: auto; float: left;}
 footer .footerInfo{ width: 100%; height: auto; margin:1em; border-left: solid 0.2em var(--accentColor); padding-left: 0.5em;}
 
 

@@ -63,7 +63,7 @@ button{color: var(--highlight); background-color: var(--accentColor); margin: 0.
 header{display: flex;}
 #miniLogo{width: 15%; height: auto; margin-left: 16.5em; margin-top: 0.7em;}
 .menuHeroPg{ padding: 1em;}
-.indexHeader{ background-image: url(../images/heroBackgroundArtisan.jpg); width: 100%; height: auto; background-position: 50% 30%;}
+.indexHeader{ background-image: url(../images/heroBackgroundArtisan.jpg); width: 100%; height: auto; background-position: 50% 20%;}
 .arrowDown{width: 100%; height: auto; margin-top: 14em; padding-left: 6em;}
 
 

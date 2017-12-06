@@ -1,6 +1,7 @@
 document.querySelectorAll(".movingParallax").forEach(function(item){
-    let initialPositiion = 25;
+    let initialPositiion = 50;
     window.addEventListener("scroll", function(event){
-        item.style.backgroundPosition = "50% "+initialPositiion + Math.round((window.innerWidth / document.scrollingElement.scrollTop))+"%";
+        console.log(window.innerHeight + "/" + document.scrollingElement.scrollTop + " == "+ (window.innerHeight / document.scrollingElement.scrollTop));
+        item.style.backgroundPosition = "50% "+ (initialPositiion + Math.round((window.innerHeight / document.scrollingElement.scrollTop)))+"%";
     });
 });

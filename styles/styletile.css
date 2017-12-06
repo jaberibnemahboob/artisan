@@ -107,7 +107,7 @@ input[type="button"]{background-color: var(--accentColor); color: var(--highligh
 #contactMessage h5{ margin-bottom: 0.5em;}
 
 /************ Bio Page ***************/
-.bioText{width: 100%; height: auto; border-left: solid 0.2em var(--accentColor);}
+.bioText{width: 90%; height: auto; padding: 1em; border-left: solid 0.2em var(--accentColor); box-shadow: 2px 3px 5px var(--headerColor);}
 
 /************ footer ***************/
 

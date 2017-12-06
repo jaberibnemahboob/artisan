@@ -1,7 +1,12 @@
 document.querySelectorAll(".movingParallax").forEach(function(item){
-    let initialPositiion = 50;
+    let initialPositiion = 20;
+    let documentHeight = bodyHeight();
+    let calculatedPosition = initialPositiion;
     window.addEventListener("scroll", function(event){
-        console.log(window.innerHeight + "/" + document.scrollingElement.scrollTop + " == "+ (window.innerHeight / document.scrollingElement.scrollTop));
-        item.style.backgroundPosition = "50% "+ (initialPositiion + Math.round((window.innerHeight / document.scrollingElement.scrollTop)))+"%";
+        calculatedPosition = (initialPositiion + Math.round((document.scrollingElement.scrollTop / documentHeight * 200)));
+        if(calculatedPosition > 100) calculatedPosition = 100;
+        else if(calculatedPosition < 0) calculatedPosition = 0;
+        item.style.backgroundPosition = "50% "+ calculatedPosition +"%";
     });
 });
+

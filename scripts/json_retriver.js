@@ -24,6 +24,7 @@ let pagesSlug = {
 function loadJSONData(url, callbackFunction){
     console.log(url);
     fetch(url).then(res=>res.json()).then(callbackFunction).catch(function(event) {
+        console.log(event);
         if(document.querySelector(".loadMoreOption button") != null){
             document.querySelector(".loadMoreOption button").setAttribute("onclick","");
             document.querySelector(".loadMoreOption button").textContent="--No more--";
@@ -186,20 +187,12 @@ function showSouvenirs_at_product(souvenirs){
     let list = document.querySelector(".productList");
     let template = document.querySelector("#productTemplate").content;
     souvenirs.forEach(function (souvenir){
-        console.log(souvenir);
         let clone = template.cloneNode(true);
 
         clone.querySelector(".view img").setAttribute("src", souvenir.acf.default_image);
         clone.querySelector(".view img").setAttribute("alt", souvenir.title.rendered);
         clone.querySelector(".name span").textContent = souvenir.title.rendered;
-        let descriptions = souvenir.content.rendered.split('</p>');
-        clone.querySelector(".description span").innerHTML = descriptions[0] + '</p>';
         clone.querySelector(".price span").textContent = souvenir.acf.price;
-        if(souvenir.acf.variant_by != "" && souvenir.acf.variant_by != "None"){
-            clone.querySelector(".note span").textContent = "Item can be varied by "+souvenir.acf.variant_by;
-        }else{
-            clone.querySelector(".note").textContent = "There is no variant of this item."
-        }
         clone.querySelector(".link").setAttribute("href",("product.html?id=" + souvenir.id + "&cat=" + souvenir.categories.join(",")));
 
         list.appendChild(clone);
@@ -209,16 +202,155 @@ function showSouvenirDetails_at_product(souvenir){
     //SHOW DATA
     console.log(souvenir);
 
-
     document.querySelector(".productPageName").textContent = souvenir.title.rendered;
-    document.querySelectorAll(".productName").forEach(function(item){item.textContent = souvenir.title.rendered;});
-    document.querySelector(".variant_by").textContent = souvenir.acf.variant_by;
-    document.querySelector(".view img").setAttribute("src",souvenir.acf.default_image);
-    document.querySelector(".view img").setAttribute("alt",souvenir.title.rendered);
-    //document.querySelector(".variantList")
+
+    let holder = document.querySelector(".productDetails");
+    let template = document.querySelector("#productDetailsTemplate").content;
+
+    let variant_by = souvenir.acf.variant_by;
+    let variants = (variant_by!="None") ? souvenir.acf[(variant_by.toLowerCase()+"_variants")] : "None";
+    let variantsList = (variants!="None") ? souvenir.acf[(variants.toLowerCase().replace(" ","_"))] : new Array();
+    let variantsListSelectCode = "";
+    let variantsArray = variantsList;
+    let categories = new Array();
+    let cats = urlParams.get("cat").split(",");
+    let variantsImg = new Array();
+
+    if(Array.isArray(variantsList) && variantsList.length>0)variantsList.forEach(function(item){variantsListSelectCode = variantsListSelectCode + '<option>'+item+'</option>';});
+    if(!(Array.isArray(variantsArray))) variantsArray = new Array();
+    if(variantsArray.length>0) variantsArray.shift();
+    if(variantsArray.length<1) variantsArray.push("N/A");
+    if(variantsArray.length>0){
+        variantsArray.forEach(function(item,index){
+            switch(index){
+                case 1:
+                    variantsImg.push(souvenir.acf.first_variant_image);
+                    break;
+                case 2:
+                    variantsImg.push(souvenir.acf.second_variant_image);
+                    break;
+                case 3:
+                    variantsImg.push(souvenir.acf.third_variant_image);
+                    break;
+                case 4:
+                    variantsImg.push(souvenir.acf.fourth_variant_image);
+                    break;
+                case 5:
+                    variantsImg.push(souvenir.acf.fifth_variant_image);
+                    break;
+                case 6:
+                    variantsImg.push(souvenir.acf.sixth_variant_image);
+                    break;
+                case 7:
+                    variantsImg.push(souvenir.acf.seventh_variant_image);
+                    break;
+                case 8:
+                    variantsImg.push(souvenir.acf.eighth_variant_image);
+                    break;
+                case 9:
+                    variantsImg.push(souvenir.acf.ninth_variant_image);
+                    break;
+                case 10:
+                    variantsImg.push(souvenir.acf.tenth_variant_image);
+                    break;
+                case 11:
+                    variantsImg.push(souvenir.acf.eleventh_variant_image);
+                    break;
+                case 12:
+                    variantsImg.push(souvenir.acf.twelfth_variant_image);
+                    break;
+                case 13:
+                    variantsImg.push(souvenir.acf.thirteenth_variant_image);
+                    break;
+                case 14:
+                    variantsImg.push(souvenir.acf.fourteenth_variant_image);
+                    break;
+                case 15:
+                    variantsImg.push(souvenir.acf.fifteenth_variant_image);
+                    break;
+                case 16:
+                    variantsImg.push(souvenir.acf.sixteenth_variant_image);
+                    break;
+                case 17:
+                    variantsImg.push(souvenir.acf.seventeenth_variant_image);
+                    break;
+                case 18:
+                    variantsImg.push(souvenir.acf.eighteenth_variant_image);
+                    break;
+                case 19:
+                    variantsImg.push(souvenir.acf.nineteenth_variant_image);
+                    break;
+                case 20:
+                    variantsImg.push(souvenir.acf.twentieth_variant_image);
+                    break;
+                case 21:
+                    variantsImg.push(souvenir.acf["twenty-first_variant_image"]);
+                    break;
+                case 22:
+                    variantsImg.push(souvenir.acf["twenty-second_variant_image"]);
+                    break;
+                case 23:
+                    variantsImg.push(souvenir.acf["twenty-third_variant_image"]);
+                    break;
+                case 24:
+                    variantsImg.push(souvenir.acf["twenty-fourth_variant_image"]);
+                    break;
+                case 25:
+                    variantsImg.push(souvenir.acf["twenty-fifth_variant_image"]);
+                    break;
+                default:
+                    break;
+            }
+        })
+    }
+    cats.forEach(function(id){
+        categoryList.forEach(function(cat){
+            if(id != (productParentCatID+"") && cat.id == id) categories.push(cat.name);
+        });
+    });
+
+    let clone = template.cloneNode(true);
+
+    clone.querySelectorAll(".productName").forEach(function(item){item.textContent = souvenir.title.rendered;});
+    clone.querySelector(".variant_by").textContent = souvenir.acf.variant_by;
+    clone.querySelector(".view img").setAttribute("src",souvenir.acf.default_image);
+    clone.querySelector(".view img").setAttribute("alt",souvenir.title.rendered);
+    if(variant_by=="None") clone.querySelector(".variantList").parentNode.classList.add("hidden");
+    else clone.querySelector(".variantList").innerHTML = variantsListSelectCode;
+
+    clone.querySelector(".price").textContent = souvenir.acf.price + " dkk";
+    clone.querySelector(".category").textContent = categories.join(", ");
+    clone.querySelector(".variant_by").textContent = souvenir.acf.variant_by;
+    clone.querySelector(".size").textContent = souvenir.acf.size;
+    clone.querySelector(".weight").textContent = souvenir.acf.weight;
+    clone.querySelector(".variants").textContent = variantsArray.join(", ");
+    clone.querySelector(".description").innerHTML = souvenir.content.rendered;
+
+
+    holder.appendChild(clone);
+
+    function changeImageOnSelectVariant(){
+        let newHolder = holder.querySelector("article:last-child");
+        let target = newHolder.querySelector(".variantList");
+        let newChangeReactionDone = false;
+        target.addEventListener("change",function(event){
+            newChangeReactionDone = false;
+            variantsArray.forEach(function(option,index){
+                if(target.value == option){
+                    if(typeof variantsImg[index] != 'undefined'){
+                        newHolder.querySelector(".view img").setAttribute("src",variantsImg[index]);
+                        newChangeReactionDone = true;
+                    }
+                }
+            });
+            if(!newChangeReactionDone) newHolder.querySelector(".view img").setAttribute("src",souvenir.acf.default_image);
+        });
+    }
+
+    runCarousel();
+    changeImageOnSelectVariant();
+
 }
-
-
 
 
 
@@ -248,9 +380,9 @@ function loadData(){
     }else if(window.location.href.indexOf("/product.html") != -1){
         let id = urlParams.get("id");
         let cats = urlParams.get("cat").split(",");
-        getSouvenirById(id,showSouvenirDetails_at_product);
+        if(loadIndex==1) getSouvenirById(id,showSouvenirDetails_at_product);
         cats.forEach(function(cat){
-            if(categoryList[cat].parent != productParentCatID){
+            if(cat != productParentCatID+""){
                 getSouvenirsByCategory(cat, (Math.round(loadPerPage/2)), loadIndex, id, showSouvenirs_at_product);
             }
         });

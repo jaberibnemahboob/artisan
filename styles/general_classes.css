@@ -6,6 +6,9 @@
 .hidden{ display: none;}
 .displayBlock{display: block;}
 
+.underline{text-decoration: underline;}
+.bold{font-weight: bold;}
+
 .content-center{width: 100%; max-width: 1100px; margin: 0 auto;}
 .center{margin: 0 auto;}
 
@@ -14,5 +17,13 @@
 
 .txt-xsm{font-size: 0.8rem;}
 .txt-sm{font-size: 0.9rem;}
+.txt-nm{font-size: 1.0rem;}
 .txt-lg{font-size: 1.1rem;}
 .txt-xlg{font-size: 1.1rem;}
+
+.width100{width: 100%;}
+
+.general-border-top{border-top: 1px solid #DEDEDE;}
+.general-border-bottom{border-bottom: 1px solid #DEDEDE;}
+.general-border-left{border-left: 1px solid #DEDEDE;}
+.general-border-right{border-right: 1px solid #DEDEDE;}

@@ -25,6 +25,12 @@
 
         --productListProductWidth: 95%;
         --productListProductMargin: 2.5%;
+
+        --productDetailsBasicInfoWidth: 95%;
+        --productDetailsBasicInfoMargin: 2.5%;
+
+        --productDetailsBasicInfoPaddingLeft: 0;
+        --productDetailsBasicInfoBorderLeft: none;
     }
 
     .displayInMob{display: block !important;}
@@ -54,6 +60,12 @@
 
         --productListProductWidth: 48%;
         --productListProductMargin: 0.5%;
+
+        --productDetailsBasicInfoWidth: 48%;
+        --productDetailsBasicInfoMargin: 0.5%;
+
+        --productDetailsBasicInfoPaddingLeft: 1rem;
+        --productDetailsBasicInfoBorderLeft: 1px solid #DEDEDE;
     }
 
 
@@ -84,6 +96,12 @@
 
         --productListProductWidth: 31%;
         --productListProductMargin: 1.16%;
+
+        --productDetailsBasicInfoWidth: 48%;
+        --productDetailsBasicInfoMargin: 0.5%;
+
+        --productDetailsBasicInfoPaddingLeft: 1rem;
+        --productDetailsBasicInfoBorderLeft: 1px solid #DEDEDE;
     }
 
 }
@@ -153,9 +171,15 @@ footer{padding: 1rem;}
 .shopSection .productList .product .view img{border: 1px solid #DEDEDE;}
 
 /* Position and Structure of .productSection */
+.productSection .loadMoreOption{padding: 1rem;}
 .productSection .productList{display: flex; flex-wrap: wrap;}
 .productSection .productList .product{width: var(--productListProductWidth); margin: var(--productListProductMargin); padding: 1rem;}
 .productSection .productList .product .view img{border: 1px solid #DEDEDE;}
 .productSection .productDetails .product .view{position: relative;}
 .productSection .productDetails .product .view img{border: 1px solid #DEDEDE;}
 .productSection .productDetails .product .view .caption{background: rgba(0,0,0,0.2); text-align: center; padding: 0.1rem; position: absolute; bottom: 0.2rem; width: 100%;}
+.productSection .productDetails .product .formField{padding-bottom: 1rem; margin-bottom: 1rem;}
+.productSection .productDetails .product .formField.top-gap{padding-top: 1rem; margin-top: 1rem;}
+.productSection .productDetails .product .basicInfo{display: flex; flex-wrap: wrap;}
+.productSection .productDetails .product .basicInfo>div{width: var(--productDetailsBasicInfoWidth); margin: var(--productDetailsBasicInfoMargin);}
+.productSection .productDetails .product .variant{padding-left: var(--productDetailsBasicInfoPaddingLeft); border-left: var(----productDetailsBasicInfoBorderLeft);}

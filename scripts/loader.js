@@ -4,7 +4,8 @@ let jsList = [
     "scripts/navigation.js",
     "scripts/json_retriver.js",
     "https://use.fontawesome.com/3bf73e391b.js",
-    "scripts/effects.js"
+    "scripts/effects.js",
+    "scripts/remarke_owncarousel.js"
 ];
 
 

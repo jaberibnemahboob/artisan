@@ -25,7 +25,7 @@ p,a,span,li,ul,ol,font{font: var(--font_regular); color: var(--textColor); text-
 a:hover, a{color: var(--highlight);}
 
 form{width: 100%;}
-input,textarea{width: 95%; min-height: 2rem; margin: 0.5rem 2.5%; box-shadow: 2px 3px 5px var(--headerColor); border: none; font: var(--font_h5); font-weight: 400; padding: 1rem;}
+input,textarea, select{width: 95%; min-height: 2rem; margin: 0.5rem 2.5%; box-shadow: 2px 3px 5px var(--headerColor); border: none; font: var(--font_h5); font-weight: 400; padding: 1rem;}
 label{padding-left: 1rem; font: var(--font_h5);}
 .formField{font: var(--font_regular); padding: 0.25rem;}
 
@@ -68,8 +68,10 @@ i{color: var(--accentColor);}
 }
 .btn.regular{color: var(--highlight); background-color: var(--accentColor);}
 .btn.disable{color: var(--backgroundColor); background-color: var(--headerColor);}
+.btn.buy{font-size: 1rem; padding: 0.25rem 2rem; background-color: var(--highlight); color: var(--backgroundColor);}
 .highlightBox{border-left: solid 0.2em var(--accentColor); padding: 0.5em;}
 .shadowBox{box-shadow: 2px 3px 5px var(--headerColor);}
+.price, .price span{color: var(--highlight); font-weight: bold;}
 footer{border-top: 1px solid var(--accentColor);}
 
 /************************ animations ************************/

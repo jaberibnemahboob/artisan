@@ -22,7 +22,12 @@ let pagesSlug = {
 
 
 function loadJSONData(url, callbackFunction){
-    fetch(url).then(res=>res.json()).then(callbackFunction);
+    fetch(url).then(res=>res.json()).then(callbackFunction).catch(function() {
+        document.querySelector(".loadMoreOption button").setAttribute("onclick","");
+        document.querySelector(".loadMoreOption button").textContent="--No more--";
+        document.querySelector(".loadMoreOption button").classList.remove("regular");
+        document.querySelector(".loadMoreOption button").classList.add("disable");
+    });;
 }
 
 
@@ -233,7 +238,7 @@ let loadIndex=0;
 function loadData(){
     loadIndex += 1;
     if(window.location.href.indexOf("/shop2.html") != -1){
-        getSouvenirs(6,loadIndex,showSouvenirs_at_shop);
+        getSouvenirs(4,loadIndex,showSouvenirs_at_shop);
     }
 }
 loadData();

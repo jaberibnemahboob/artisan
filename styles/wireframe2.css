@@ -147,6 +147,7 @@ footer{padding: 1rem;}
 .contactSection article{width: var(--contactSectionArticleWidth); margin: var(--contactSectionArticleMargin);}
 
 /* Position and Structure of .shopSection */
+.shopSection .loadMoreOption{padding: 1rem;}
 .shopSection .productList{display: flex; flex-wrap: wrap;}
-.shopSection .product{width: var(--productListProductWidth); margin: var(--productListProductMargin); padding: 1rem;}
-.shopSection .product .view img{border: 1px solid #DEDEDE;}
+.shopSection .productList .product{width: var(--productListProductWidth); margin: var(--productListProductMargin); padding: 1rem;}
+.shopSection .productList .product .view img{border: 1px solid #DEDEDE;}

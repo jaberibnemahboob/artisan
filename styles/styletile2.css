@@ -51,7 +51,6 @@ i{color: var(--accentColor);}
     background: linear-gradient(to right, #7b0e0b, #f1a006); /* Standard syntax */;
     margin: 0.5em;
     border-radius:  20px 5px 50px 5px;}
-.btn.regular{color: var(--highlight); background-color: var(--accentColor);}
 .btn{
     display: inline-block;
     font-weight: 400;
@@ -67,6 +66,8 @@ i{color: var(--accentColor);}
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
+.btn.regular{color: var(--highlight); background-color: var(--accentColor);}
+.btn.disable{color: var(--backgroundColor); background-color: var(--headerColor);}
 .highlightBox{border-left: solid 0.2em var(--accentColor); padding: 0.5em;}
 .shadowBox{box-shadow: 2px 3px 5px var(--headerColor);}
 footer{border-top: 1px solid var(--accentColor);}

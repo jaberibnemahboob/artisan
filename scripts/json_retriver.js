@@ -1,4 +1,4 @@
-let siteurl = "http://studkea.jprkopat.com/semester_2/theme0801/artisan//wp-json/wp/v2/";
+let siteurl = "https://studkea.jprkopat.com/semester_2/theme0801/artisan//wp-json/wp/v2/";
 let pagesID = {
     home : 6,
     biography : 8,

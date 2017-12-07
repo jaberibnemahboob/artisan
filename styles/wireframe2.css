@@ -19,6 +19,9 @@
         --footerArticleWidth: 95%;
         --footerArticleMargin: 2.5%;
         --footerContentAlign: left;
+
+        --contactSectionArticleWidth: 95%;
+        --contactSectionArticleMargin: 2.5%;
     }
 
     .displayInMob{display: block !important;}
@@ -42,6 +45,9 @@
         --footerArticleWidth: 31%;
         --footerArticleMargin: 1.16%;
         --footerContentAlign: center;
+
+        --contactSectionArticleWidth: 48%;
+        --contactSectionArticleMargin: 0.5%;
     }
 
 
@@ -66,16 +72,21 @@
         --footerArticleWidth: 31%;
         --footerArticleMargin: 1.16%;
         --footerContentAlign: center;
+
+        --contactSectionArticleWidth: 48%;
+        --contactSectionArticleMargin: 0.5%;
     }
 
 }
 
 
 main{}
-section{}
+main .topGap{height: 6em;}
+section{padding: 1rem;}
+section>hr, article>hr{margin: 1rem 0rem;}
 article{margin: 1rem 1rem;}
 header{}
-footer{padding: 2rem;}
+footer{padding: 1rem;}
 
 /* Position and Structure of .pageHeader */
 .pageHeader{position: fixed; width: 100%;}
@@ -121,3 +132,7 @@ footer{padding: 2rem;}
 .pageFooter>div.content article{margin: var(--footerArticleMargin); width: var(--footerArticleWidth);}
 .pageFooter>div.content article .contentAlign{text-align: var(--footerContentAlign); height: 100%;}
 .pageFooter>div.content article .contentAlign .displayInlineBlock{height: 100%;}
+
+/* Position and Structure of .contactSection */
+.contactSection{display: flex; flex-wrap: wrap;}
+.contactSection article{width: var(--contactSectionArticleWidth); margin: var(--contactSectionArticleMargin);}

@@ -33,7 +33,7 @@ document.querySelectorAll(".pageHeader>div.background").forEach(function(backgro
         else if(opacity<defaultOpacity) opacity = defaultOpacity;
         else opacity = Math.round((opacity*100))/100;
         background.style.opacity = opacity;
-        document.querySelectorAll("nav.tabNavigation>ul>li>a").forEach(function(link){
+        document.querySelectorAll("nav.tabNavigation.atHomePage>ul>li>a").forEach(function(link){
             if((opacity>0.5) && (link.classList.contains('invert'))) link.classList.remove('invert');
             else if((opacity<0.5) && !(link.classList.contains('invert'))) link.classList.add('invert');
         });

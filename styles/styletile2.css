@@ -23,13 +23,20 @@ section{}
 article{}
 p,a,span,li,ul,ol,font{font: var(--font_regular); color: var(--textColor); text-decoration: none; list-style: none;}
 a:hover, a{color: var(--highlight);}
+
+form{width: 100%;}
+input,textarea{width: 95%; min-height: 2rem; margin: 0.5rem 2.5%; box-shadow: 2px 3px 5px var(--headerColor); border: none; font: var(--font_h5); font-weight: 400; padding: 1rem;}
+label{padding-left: 1rem; font: var(--font_h5);}
+.formField{font: var(--font_regular); padding: 0.25rem;}
+
+
 img{width: 100%;}
 img.displayInline{width: 1rem;}
 p{margin: 0.75rem;}
-h1{font: var(--font_h1); color: var(--textColor); margin: 1.2rem;}
-h2{font: var(--font_h2); color: var(--headerColor); margin: 1.1rem;}
-h3{font: var(--font_h3); color: var(--headerColor); margin: 1.1rem;}
-h4{font: var(--font_h4); color: var(--headerColor); margin: 1.1rem;}
+h1{font: var(--font_h1); color: var(--textColor); margin: 0.8rem;}
+h2{font: var(--font_h2); color: var(--headerColor); margin: 0.9rem;}
+h3{font: var(--font_h3); color: var(--headerColor); margin: 0.9rem;}
+h4{font: var(--font_h4); color: var(--headerColor); margin: 0.9rem;}
 h5{font: var(--font_h5); color: var(--headerColor); margin: 1.0rem;}
 h6{font: var(--font_h6); color: var(--headerColor); margin: 1.0rem;}
 nav a{text-decoration: none; font: var(--font_nav); color: var(--textColor);}

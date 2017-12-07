@@ -32,3 +32,6 @@
 
 /* contactSection */
 .contactSection article:nth-child(3){padding-left: 1rem; border-left: var(--contactSection2ndArticleBorderLeft);}
+
+/* productSection */
+.productSection .productDetails .product .view .caption h5{color: var(--headerColor); font-weight: bold;}

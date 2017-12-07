@@ -22,12 +22,14 @@ let pagesSlug = {
 
 
 function loadJSONData(url, callbackFunction){
+    console.log(url);
     fetch(url).then(res=>res.json()).then(callbackFunction).catch(function(event) {
-        console.log(event);
-        document.querySelector(".loadMoreOption button").setAttribute("onclick","");
-        document.querySelector(".loadMoreOption button").textContent="--No more--";
-        document.querySelector(".loadMoreOption button").classList.remove("regular");
-        document.querySelector(".loadMoreOption button").classList.add("disable");
+        if(document.querySelector(".loadMoreOption button") != null){
+            document.querySelector(".loadMoreOption button").setAttribute("onclick","");
+            document.querySelector(".loadMoreOption button").textContent="--No more--";
+            document.querySelector(".loadMoreOption button").classList.remove("regular");
+            document.querySelector(".loadMoreOption button").classList.add("disable");
+        }
     });;
 }
 
@@ -150,6 +152,10 @@ function getSouvenirsByCategory(id, per_page, current_page, exclude, callBack){
 
 //FINALIZED SHOW FUNCTION
 function showSouvenirs_at_shop(souvenirs){
+    //SHOW DATA
+    console.log(souvenirs);
+
+
     let list = document.querySelector(".productList");
     let template = document.querySelector("#productTemplate").content;
     souvenirs.forEach(function (souvenir){
@@ -173,6 +179,10 @@ function showSouvenirs_at_shop(souvenirs){
     });
 }
 function showSouvenirs_at_product(souvenirs){
+    //SHOW DATA
+    console.log(souvenirs);
+
+
     let list = document.querySelector(".productList");
     let template = document.querySelector("#productTemplate").content;
     souvenirs.forEach(function (souvenir){
@@ -196,8 +206,16 @@ function showSouvenirs_at_product(souvenirs){
     });
 }
 function showSouvenirDetails_at_product(souvenir){
-    document.querySelector(".productPageName").textContent = souvenir.title.rendered;
+    //SHOW DATA
+    console.log(souvenir);
 
+
+    document.querySelector(".productPageName").textContent = souvenir.title.rendered;
+    document.querySelectorAll(".productName").forEach(function(item){item.textContent = souvenir.title.rendered;});
+    document.querySelector(".variant_by").textContent = souvenir.acf.variant_by;
+    document.querySelector(".view img").setAttribute("src",souvenir.acf.default_image);
+    document.querySelector(".view img").setAttribute("alt",souvenir.title.rendered);
+    //document.querySelector(".variantList")
 }
 
 
@@ -232,7 +250,7 @@ function loadData(){
         let cats = urlParams.get("cat").split(",");
         getSouvenirById(id,showSouvenirDetails_at_product);
         cats.forEach(function(cat){
-            if(categoryList[cat].parent == productParentCatID){
+            if(categoryList[cat].parent != productParentCatID){
                 getSouvenirsByCategory(cat, (Math.round(loadPerPage/2)), loadIndex, id, showSouvenirs_at_product);
             }
         });
@@ -240,7 +258,6 @@ function loadData(){
 }
 function loadCategoires(){
     getCategories(100,1,function(categories){
-        console.log(categories);
         categoryList = categories;
         categoryList.forEach(function(cat){
             if(cat.slug == "souvenirs") productParentCatID = cat.id;

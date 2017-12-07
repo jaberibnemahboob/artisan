@@ -98,7 +98,7 @@ header{}
 footer{padding: 1rem;}
 
 /* Position and Structure of .pageHeader */
-.pageHeader{position: fixed; width: 100%;}
+.pageHeader{position: fixed; width: 100%; z-index: 1000;}
 .pageHeader>div.background{position: absolute; width: 100%; height: 98%;}
 .pageHeader>div.content{position: relative; padding: var(--pageHeaderPadding); display: flex; justify-content: space-between;}
 .pageHeader div.logo{max-width: var(--logoSize);}
@@ -156,3 +156,6 @@ footer{padding: 1rem;}
 .productSection .productList{display: flex; flex-wrap: wrap;}
 .productSection .productList .product{width: var(--productListProductWidth); margin: var(--productListProductMargin); padding: 1rem;}
 .productSection .productList .product .view img{border: 1px solid #DEDEDE;}
+.productSection .productDetails .product .view{position: relative;}
+.productSection .productDetails .product .view img{border: 1px solid #DEDEDE;}
+.productSection .productDetails .product .view .caption{background: rgba(0,0,0,0.2); text-align: center; padding: 0.1rem; position: absolute; bottom: 0.2rem; width: 100%;}

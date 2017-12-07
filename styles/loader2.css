@@ -1,5 +1,0 @@
-/* HERE YOU GONNA LOAD ALL STYLES IN SEQUENCE */
-@import url(general_classes.css);
-@import url(wireframe2.css);
-@import url(styletile2.css);
-@import url(style.css);

@@ -3,140 +3,194 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Christian Edwards Home</title>
-
-        <link rel="stylesheet" href="styles/loader.css"/>
+        <title>Title</title>
+        <link rel="stylesheet" href="styles/loader2.css"/>
     </head>
     <body>
 
-        <aside id="offCanvasNav" class="hidden">
-            <nav>
-                <a href="#" class="hidden" onclick="toggleMenu()" id="times_nav_header"><i class="fa fa-times" aria-hidden="true"></i></a>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#"  onclick="toggleSubMenu()"> About <i id="subCategoryCaret" class="fa fa-chevron-left"></i></a>
-                        <ul id="subCategoryMenu" class="hidden">
-                            <li><a href="biography.html">Biography</a></li>
-                            <li><a href="process.html">Process</a></li>
-                            <li><a href="exhibitions.html">Exhibitions</a></li>
-                            <li><a href="workshops.html">Workshops</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#" onclick="toggleSubMenuArt()">Artwork <i id="subCategoryArtCaret" class="fa fa-chevron-left"></i></a>
-                        <ul id="subCategoryArt" class="hidden">
-                            <li><a href="luxuryartworks.html">Projects</a></li>
-                            <li><a href="souvenirsshop.html">Shop</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </aside>
 
-        <header class="indexHeader movingParallax">
-
-            <a href="#" onclick="toggleMenu()">
-
-                <div class="menuHeroPg">
-
-                    <div class="hamburgerMenu" id="line_1"></div>
-                    <div class="hamburgerMenu" id="line_2"></div>
-                    <div class="hamburgerMenu" id="line_3"></div>
-
-                </div>
-
-            </a>
-            <section class="heroSection">
-
-                <div class="contentHolder">
-
+        <header class="pageHeader">
+            <!-- LOGO AND MENU WILL GOES HERE -->
+            <div class="background">&nbsp;</div>
+            <div class="content content-center">
+                <div class="logoHolder">
                     <div class="content">
-
-                        <div class="logoHeroPage">
-
-                            <img src="images/logo.png" alt="Christian Edward's Logo">
-                            <h1>hristian Edwards</h1>
-                            <div class="arrowDown">
-                                <i class="fa fa-chevron-down fa-lg" aria-hidden="true"></i>
-                            </div>
-
+                        <div class="logo">
+                            <a href="index.html"><img src="images/logo.png" alt="Logo"/></a>
                         </div>
+                    </div>
+                </div>
+                <div class="displayNone displayInTab navigationHolder">
+                    <div class="content">
+                        <nav class="tabNavigation atHomePage">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li>
+                                    <a href="#" onclick="toggleSubMenu()">About <i id="subCategoryCaret" class="fa fa-chevron-left"></i></a>
 
+                                    <ul id="subCategoryMenu" class="hidden">
+                                        <li><a href="biography.html">Biography</a></li>
+                                        <li><a href="process.html">Process</a></li>
+                                        <li><a href="exhibitions.html">Exhibitions</a></li>
+                                        <li><a href="workshops.html">Workshops</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="toggleSubMenuArt()">ArtWork <i id="subCategoryCaret" class="fa fa-chevron-left"></i></a>
+                                    <ul id="subCategoryArt" class="hidden">
+                                        <li><a href="projects.html">Projects</a></li>
+                                        <li><a href="shop.html">Shop</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="displayNone displayInMob navigationHolder">
+                    <div class="content">
+                        <div class="hamburger" onclick="toggleMenu()">
+                            <div class="hamburgerBar hamburgerBar1"></div>
+                            <div class="hamburgerBar hamburgerBar2"></div>
+                            <div class="hamburgerBar hamburgerBar3"></div>
+                        </div>
                     </div>
 
+                    <div class="mobileNavContent hidden" id="offCanvasNav">
+                        <nav class="mobileNavigation">
+                            <div class="closeNav">
+                                <a href="#" class="hidden" onclick="toggleMenu()" id="times_nav_header">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                             <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li>
+                                    <a href="#" onclick="toggleSubMenu()"> About <i id="subCategoryCaret" class="fa fa-chevron-left"></i></a>
+                                    <ul id="subCategoryMenu" class="hidden">
+                                        <li><a href="biography.html">Biography</a></li>
+                                        <li><a href="process.html">Process</a></li>
+                                        <li><a href="exhibitions.html">Exhibitions</a></li>
+                                        <li><a href="workshops.html">Workshops</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="toggleSubMenuArt()">Artwork <i id="subCategoryArtCaret" class="fa fa-chevron-left"></i></a>
+                                    <ul id="subCategoryArt" class="hidden">
+                                        <li><a href="luxuryartworks.html">Projects</a></li>
+                                        <li><a href="souvenirsshop.html">Shop</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
-
-            </section>
+            </div>
         </header>
 
-        <main>
+        <main class="pageMain">
 
-            <section class="shopThumbnails">
-
+            <section class="heroSection movingParallax">
                 <div class="contentHolder">
-
                     <div class="content">
-
-                        <div class="shortDescription">
-                            <h3>Topic #1</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <button>See More</button>
+                        <div class="box">
+                            <h1 class="invert"><img class="displayInline" src="images/logo_header.png" alt="logoHeader"/>hristian Edwards</h1>
+                            <h4 class="invert">We have developed glass together with Brian Mark Hansen from Søllerød Kro, Restaurant Kong Hans Cellar and Thomas Herman.</h4>
                         </div>
+                    </div>
+                </div>
+            </section>
 
-                        <div class="shortDescription">
-                            <h3>Topic #2</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <button>See More</button>
+            <section class="aboutSection">
+
+                <h2 class="txt-center">About</h2>
+
+                <div class="content content-center">
+
+                    <article class="biography shadowBox shortDescription">
+                        <div class="contentHolder">
+                            <div class="content">
+                                <h3>Myself</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <p><a href="biography.html" class="btn regular">Learn More</a></p>
+                            </div>
                         </div>
+                    </article>
 
-                        <div class="shortDescription">
-                            <h3>Topic #3</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <button>See More</button>
+                    <article class="exhibitions shadowBox shortDescription">
+                        <div class="contentHolder">
+                            <div class="content">
+                                <h3>My Exhibitions</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <p><a href="exhibitions.html" class="btn regular">Learn More</a></p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="workshops shadowBox shortDescription">
+                        <div class="contentHolder">
+                            <div class="content">
+                                <h3>My Workshops</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <p><a href="workshops.html" class="btn regular">Learn More</a></p>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+        </main>
+
+        <footer class="pageFooter">
+            <div class="content content-center">
+
+                <article class="contactInfo">
+                    <div class="content contentAlign">
+
+                        <div class="displayInlineBlock highlightBox txt-left">
+                            <span class="displayBlock">Christian Edwards</span>
+                            <span class="displayBlock">Nyhavns Glaspustery</span>
+                            <span class="displayBlock">Toldbodsgade 4,</span>
+                            <span class="displayBlock">1253 Copenhagen K, Denmark</span>
+                            <span class="displayBlock">Telephone: +45 3313 0134</span>
+                            <span class="displayBlock">info@copenhagen.dk</span>
+                            <span class="displayBlock">http://www.copenhagenglass.dk</span>
                         </div>
 
                     </div>
+                </article>
 
-                </div>
+                <article class="footerMenu">
+                    <div class="content contentAlign">
 
-            </section>
+                        <div class="displayInlineBlock highlightBox txt-left">
+                            <span class="displayBlock"><a href="#">Disclaimer</a></span>
+                            <span class="displayBlock"><a href="#">Shipping &amp; Handling</a></span>
+                            <span class="displayBlock"><a href="#">International Shipping</a></span>
+                            <span class="displayBlock"><a href="#">Term &amp; Conditions</a></span>
+                            <span class="displayBlock"><a href="#">FAQ</a></span>
+                        </div>
 
-        </main>
+                    </div>
+                </article>
 
-        <footer>
+                <article class="socialMenu">
+                    <div class="content contentAlign">
 
-            <div class="footerInfo">
-                <p>Christian Edwards</p>
-                <p>Nyhavns Glaspustery</p>
-                <p>Toldbodsgade 4,</p>
-                <p>1253 Copenhagen K, Denmark</p>
-                <p>Telephone: +45 3313 0134</p>
-                <p>info@copenhagen.dk</p>
-                <p>http://www.copenhagenglass.dk</p>
+                        <div class="displayInlineBlock highlightBox txt-left">
+                            <span class="displayBlock"><a href="#"><i class="fa fa-facebook-official"></i> &nbsp;Facebook</a></span>
+                            <span class="displayBlock"><a href="#"><i class="fa fa-instagram"></i> &nbsp;Instagram</a></span>
+                            <span class="displayBlock"><a href="#"><i class="fa fa-pinterest-p"></i> &nbsp;Pinterest</a></span>
+                        </div>
+
+                    </div>
+                </article>
+
             </div>
-            <div class="footerInfo">
-                <a href="#">
-                    <p>Disclaimers</p>
-                </a>
-                <a href="#">
-                    <p>Shipping and Handling</p>
-                </a>
-                <a href="#">
-                    <p>International Shipping</p>
-                </a>
-            </div>
-            <div class="footerInfo">
-                <ul>
-                    <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook </a></li>
-                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram </a></li>
-                    <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i> Pinterest </a></li>
-                </ul>
-            </div>
-
         </footer>
 
-
-        <script type="text/javascript" src="scripts/loader.js"></script>
+        <script type="text/javascript" src="scripts/loader2.js"></script>
 
     </body>
 </html>

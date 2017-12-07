@@ -1,174 +1,206 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christian Edwards Home</title>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Title</title>
+        <link rel="stylesheet" href="styles/loader2.css"/>
+    </head>
+    <body>
 
-    <link rel="stylesheet" href="styles/loader.css"/>
-</head>
-<body>
 
-    <aside id="offCanvasNav" class="hidden">
-        <nav>
-            <a href="#" class="hidden" onclick="toggleMenu()" id="times_nav_header"><i class="fa fa-times" aria-hidden="true"></i></a>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#"  onclick="toggleSubMenu()"> About <i id="subCategoryCaret" class="fa fa-chevron-left"></i></a>
-                    <ul id="subCategoryMenu" class="hidden">
-                        <li><a href="biography.html">Biography</a></li>
-                        <li><a href="process.html">Process</a></li>
-                        <li><a href="exhibitions.html">Exhibitions</a></li>
-                        <li><a href="workshops.html">Workshops</a></li>
-                    </ul>
-                </li>
-                <li><a href="#" onclick="toggleSubMenuArt()">Artwork <i id="subCategoryArtCaret" class="fa fa-chevron-left"></i></a>
-                    <ul id="subCategoryArt" class="hidden">
-                        <li><a href="luxuryartworks.html">Projects</a></li>
-                        <li><a href="souvenirsshop.html">Shop</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </aside>
+        <header class="pageHeader">
+            <!-- LOGO AND MENU WILL GOES HERE -->
+            <div class="background">&nbsp;</div>
+            <div class="content content-center">
+                <div class="logoHolder">
+                    <div class="content">
+                        <div class="logo">
+                            <a href="index.html"><img src="images/logo.png" alt="Logo"/></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="displayNone displayInTab navigationHolder">
+                    <div class="content">
+                        <nav class="tabNavigation">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li>
+                                    <a href="#" onclick="toggleSubMenu()">About <i id="subCategoryCaret" class="fa fa-chevron-left"></i></a>
 
-    <header>
-
-        <a href="#" onclick="toggleMenu()">
-
-            <div class="menuHeroPg">
-
-                <div class="hamburgerMenu" id="line_1"></div>
-                <div class="hamburgerMenu" id="line_2"></div>
-                <div class="hamburgerMenu" id="line_3"></div>
-
-            </div>
-
-        </a>
-        <a href="index.html">
-
-            <img id="miniLogo" src="images/logo.png" alt="Christian Edward's Logo">
-
-        </a>
-
-    </header>
-
-    <main>
-        <div id="pageHeading">
-            <h1>Contact</h1>
-        </div>
-
-        <section>
-
-            <div class="contentHolder">
-
-                <div class="content">
-
-                    <div id="contactMessage">
-                        <h3>I look forward to hearing from you...</h3>
-                        <h5>Contact Information:</h5>
-                        <p>Christian Edwards</p>
-                        <p>Nyhavns Glaspustery</p>
-                        <p>Toldbodsgade 4,</p>
-                        <p>1253 Copenhagen K, Denmark</p>
-                        <p>Telephone: +45 3313 0134</p>
-                        <p>info@copenhagen.dk</p>
-                        <p>http://www.copenhagenglass.dk</p>
+                                    <ul id="subCategoryMenu" class="hidden">
+                                        <li><a href="biography.html">Biography</a></li>
+                                        <li><a href="process.html">Process</a></li>
+                                        <li><a href="exhibitions.html">Exhibitions</a></li>
+                                        <li><a href="workshops.html">Workshops</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="toggleSubMenuArt()">ArtWork <i id="subCategoryCaret" class="fa fa-chevron-left"></i></a>
+                                    <ul id="subCategoryArt" class="hidden">
+                                        <li><a href="projects.html">Projects</a></li>
+                                        <li><a href="shop.html">Shop</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="displayNone displayInMob navigationHolder">
+                    <div class="content">
+                        <div class="hamburger" onclick="toggleMenu()">
+                            <div class="hamburgerBar hamburgerBar1"></div>
+                            <div class="hamburgerBar hamburgerBar2"></div>
+                            <div class="hamburgerBar hamburgerBar3"></div>
+                        </div>
                     </div>
 
+                    <div class="mobileNavContent hidden" id="offCanvasNav">
+                        <nav class="mobileNavigation">
+                            <div class="closeNav">
+                                <a href="#" class="hidden" onclick="toggleMenu()" id="times_nav_header">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                             <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li>
+                                    <a href="#" onclick="toggleSubMenu()"> About <i id="subCategoryCaret" class="fa fa-chevron-left"></i></a>
+                                    <ul id="subCategoryMenu" class="hidden">
+                                        <li><a href="biography.html">Biography</a></li>
+                                        <li><a href="process.html">Process</a></li>
+                                        <li><a href="exhibitions.html">Exhibitions</a></li>
+                                        <li><a href="workshops.html">Workshops</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="toggleSubMenuArt()">Artwork <i id="subCategoryArtCaret" class="fa fa-chevron-left"></i></a>
+                                    <ul id="subCategoryArt" class="hidden">
+                                        <li><a href="luxuryartworks.html">Projects</a></li>
+                                        <li><a href="souvenirsshop.html">Shop</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
-
             </div>
+        </header>
 
-        </section>
+        <main class="pageMain">
 
-        <section>
+            <div class="topGap">&nbsp;</div>
 
-            <div class="contentHolder">
+            <h1 class="txt-center">Contact us</h1>
 
-                <div class="content">
+            <section class="contactSection">
 
-                    <div id="mapFrame">
-                        <h5>Located near Nyhavn.</h5>
+                <article class="contactInfo">
+                    <h5>We love to hear from you!</h5>
+                    <div class="content content-center">
+                        <form action="" method="post">
+                            <div class="formField">
+                                <label for="name">Name:</label>
+                                <input type="text" name="name" placeholder="Name" value="" />
+                            </div>
+                            <div class="formField">
+                                <label for="name">Phone:</label>
+                                <input type="text" name="phone" placeholder="Phone" value="" />
+                            </div>
+                            <div class="formField">
+                                <label for="email">Email:</label>
+                                <input type="text" name="email" placeholder="Email" value="" />
+                            </div>
+                            <div class="formField">
+                                <label for="name">Name:</label>
+                                <textarea name="message" placeholder="Your Message"></textarea>
+                            </div>
+                            <div class="formField">
+                                <input type="submit" class="btn regular" value="Send"/>
+                            </div>
+                        </form>
+                    </div>
+                </article>
 
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.5100876094302!2d12.589602515547192!3d55.68011900506338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46525322d44023c7%3A0x37ab900c9154a0ad!2sToldbodgade+4%2C+1253+K%C3%B8benhavn+K!5e0!3m2!1sen!2sdk!4v1512557740653" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <hr class="displayInMob displayNone"/>
 
+                <article>
+                    <h5>Contact through regular method.</h5>
+                    <div class="content content-center">
+                        <div class="displayInlineBlock txt-left">
+                            <span class="displayBlock">Christian Edwards</span>
+                            <span class="displayBlock">Nyhavns Glaspustery</span>
+                            <span class="displayBlock">Toldbodsgade 4,</span>
+                            <span class="displayBlock">1253 Copenhagen K, Denmark</span>
+                            <span class="displayBlock">Telephone: +45 3313 0134</span>
+                            <span class="displayBlock">info@copenhagen.dk</span>
+                            <span class="displayBlock">http://www.copenhagenglass.dk</span>
+                        </div>
                     </div>
 
-                </div>
+                    <hr/>
+
+                    <h5>Come and visit us</h5>
+                    <div class="content content-center">
+                        <iframe width="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.5100876094302!2d12.589602515547192!3d55.68011900506338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46525322d44023c7%3A0x37ab900c9154a0ad!2sToldbodgade+4%2C+1253+K%C3%B8benhavn+K!5e0!3m2!1sen!2sdk!4v1512557740653" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </article>
+
+            </section>
+
+        </main>
+
+        <footer class="pageFooter">
+            <div class="content content-center">
+
+                <article class="contactInfo">
+                    <div class="content contentAlign">
+
+                        <div class="displayInlineBlock highlightBox txt-left">
+                            <span class="displayBlock">Christian Edwards</span>
+                            <span class="displayBlock">Nyhavns Glaspustery</span>
+                            <span class="displayBlock">Toldbodsgade 4,</span>
+                            <span class="displayBlock">1253 Copenhagen K, Denmark</span>
+                            <span class="displayBlock">Telephone: +45 3313 0134</span>
+                            <span class="displayBlock">info@copenhagen.dk</span>
+                            <span class="displayBlock">http://www.copenhagenglass.dk</span>
+                        </div>
+
+                    </div>
+                </article>
+
+                <article class="footerMenu">
+                    <div class="content contentAlign">
+
+                        <div class="displayInlineBlock highlightBox txt-left">
+                            <span class="displayBlock"><a href="#">Disclaimer</a></span>
+                            <span class="displayBlock"><a href="#">Shipping &amp; Handling</a></span>
+                            <span class="displayBlock"><a href="#">International Shipping</a></span>
+                            <span class="displayBlock"><a href="#">Term &amp; Conditions</a></span>
+                            <span class="displayBlock"><a href="#">FAQ</a></span>
+                        </div>
+
+                    </div>
+                </article>
+
+                <article class="socialMenu">
+                    <div class="content contentAlign">
+
+                        <div class="displayInlineBlock highlightBox txt-left">
+                            <span class="displayBlock"><a href="#"><i class="fa fa-facebook-official"></i> &nbsp;Facebook</a></span>
+                            <span class="displayBlock"><a href="#"><i class="fa fa-instagram"></i> &nbsp;Instagram</a></span>
+                            <span class="displayBlock"><a href="#"><i class="fa fa-pinterest-p"></i> &nbsp;Pinterest</a></span>
+                        </div>
+
+                    </div>
+                </article>
 
             </div>
+        </footer>
 
-        </section>
+        <script type="text/javascript" src="scripts/loader2.js"></script>
 
-
-        <section>
-
-            <div class="contentHolder">
-
-                <div class="content">
-                    <h3 id="contentH3">Or send me a direct message:</h3>
-
-                    <form action="#">
-
-                        <h5 class="formLable">Name:</h5>
-                        <input type="text" name="name">
-
-                        <h5 class="formLable">Phone:</h5>
-                        <input type="number" name="phone_nr">
-
-                        <h5 class="formLable">E-mail:</h5>
-                        <input type="text" name="e_mail">
-
-                        <h5 class="formLable">Message:</h5>
-                        <textarea name="message" rows="10"/></textarea>
-
-                        <input type="button" name="send" value=" Send ">
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <footer>
-
-        <div class="footerInfo">
-            <p>Christian Edwards</p>
-            <p>Nyhavns Glaspustery</p>
-            <p>Toldbodsgade 4,</p>
-            <p>1253 Copenhagen K, Denmark</p>
-            <p>Telephone: +45 3313 0134</p>
-            <p>info@copenhagen.dk</p>
-            <p>http://www.copenhagenglass.dk</p>
-        </div>
-        <div class="footerInfo">
-            <a href="#">
-                <p>Disclaimers</p>
-            </a>
-            <a href="#">
-                <p>Shipping and Handling</p>
-            </a>
-            <a href="#">
-                <p>International Shipping</p>
-            </a>
-        </div>
-        <div class="footerInfo">
-            <ul>
-                <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook </a></li>
-                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram </a></li>
-                <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i> Pinterest </a></li>
-            </ul>
-        </div>
-
-    </footer>
-
-    <script type="text/javascript" src="scripts/loader.js"></script>
-
-</body>
+    </body>
 </html>

@@ -1,3 +1,4 @@
+/* HERE YOU GONNA LOAD ALL STYLES IN SEQUENCE */
 @import url(general_classes.css);
 @import url(wireframe.css);
 @import url(styletile.css);

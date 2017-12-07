@@ -32,13 +32,13 @@ label{padding-left: 1rem; font: var(--font_h5);}
 
 img{width: 100%;}
 img.displayInline{width: 1rem;}
-p{margin: 0.75rem;}
-h1{font: var(--font_h1); color: var(--textColor); margin: 0.8rem;}
-h2{font: var(--font_h2); color: var(--headerColor); margin: 0.9rem;}
-h3{font: var(--font_h3); color: var(--headerColor); margin: 0.9rem;}
-h4{font: var(--font_h4); color: var(--headerColor); margin: 0.9rem;}
-h5{font: var(--font_h5); color: var(--headerColor); margin: 1.0rem;}
-h6{font: var(--font_h6); color: var(--headerColor); margin: 1.0rem;}
+p{margin: 0.75rem 0rem;}
+h1{font: var(--font_h1); color: var(--textColor); margin: 0.8rem 0.1rem;}
+h2{font: var(--font_h2); color: var(--headerColor); margin: 0.9rem 0.1rem;}
+h3{font: var(--font_h3); color: var(--headerColor); margin: 0.9rem 0.1rem;}
+h4{font: var(--font_h4); color: var(--headerColor); margin: 0.9rem 0.1rem;}
+h5{font: var(--font_h5); color: var(--headerColor); margin: 1.0rem 0.1rem;}
+h6{font: var(--font_h6); color: var(--headerColor); margin: 1.0rem 0.1rem;}
 nav a{text-decoration: none; font: var(--font_nav); color: var(--textColor);}
 nav a.active, nav a:hover{text-decoration: none; font: var(--font_nav); color: var(--highlight);}
 i{color: var(--accentColor);}
@@ -68,6 +68,7 @@ i{color: var(--accentColor);}
     transition: all .2s ease-in-out;
 }
 .highlightBox{border-left: solid 0.2em var(--accentColor); padding: 0.5em;}
+.shadowBox{box-shadow: 2px 3px 5px var(--headerColor);}
 footer{border-top: 1px solid var(--accentColor);}
 
 /************************ animations ************************/

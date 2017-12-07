@@ -22,6 +22,9 @@
 
         --contactSectionArticleWidth: 95%;
         --contactSectionArticleMargin: 2.5%;
+
+        --productListProductWidth: 95%;
+        --productListProductMargin: 2.5%;
     }
 
     .displayInMob{display: block !important;}
@@ -48,6 +51,9 @@
 
         --contactSectionArticleWidth: 48%;
         --contactSectionArticleMargin: 0.5%;
+
+        --productListProductWidth: 48%;
+        --productListProductMargin: 0.5%;
     }
 
 
@@ -75,6 +81,9 @@
 
         --contactSectionArticleWidth: 48%;
         --contactSectionArticleMargin: 0.5%;
+
+        --productListProductWidth: 31%;
+        --productListProductMargin: 1.16%;
     }
 
 }
@@ -99,7 +108,7 @@ footer{padding: 1rem;}
 .pageHeader .navigationHolder{position: relative;}
 
 .pageHeader .navigationHolder nav.tabNavigation{min-width: 600px;}
-.pageHeader .navigationHolder nav.tabNavigation>ul{display: flex; flex-wrap: nowrap;}
+.pageHeader .navigationHolder nav.tabNavigation>ul{display: flex; flex-wrap: nowrap; padding: 1rem 0rem;}
 .pageHeader .navigationHolder nav.tabNavigation>ul>li{width: 24%; margin: 0.66%; position: relative;}
 .pageHeader .navigationHolder nav.tabNavigation>ul>li ul{position: absolute; min-width: 200px;}
 .pageHeader .navigationHolder nav.tabNavigation>ul>li ul a{margin: 0 0 0.5em 0.5em;}
@@ -136,3 +145,8 @@ footer{padding: 1rem;}
 /* Position and Structure of .contactSection */
 .contactSection{display: flex; flex-wrap: wrap;}
 .contactSection article{width: var(--contactSectionArticleWidth); margin: var(--contactSectionArticleMargin);}
+
+/* Position and Structure of .shopSection */
+.shopSection .productList{display: flex; flex-wrap: wrap;}
+.shopSection .product{width: var(--productListProductWidth); margin: var(--productListProductMargin); padding: 1rem;}
+.shopSection .product .view img{border: 1px solid #DEDEDE;}

@@ -151,3 +151,8 @@ footer{padding: 1rem;}
 .shopSection .productList{display: flex; flex-wrap: wrap;}
 .shopSection .productList .product{width: var(--productListProductWidth); margin: var(--productListProductMargin); padding: 1rem;}
 .shopSection .productList .product .view img{border: 1px solid #DEDEDE;}
+
+/* Position and Structure of .productSection */
+.productSection .productList{display: flex; flex-wrap: wrap;}
+.productSection .productList .product{width: var(--productListProductWidth); margin: var(--productListProductMargin); padding: 1rem;}
+.productSection .productList .product .view img{border: 1px solid #DEDEDE;}

@@ -22,7 +22,8 @@ let pagesSlug = {
 
 
 function loadJSONData(url, callbackFunction){
-    fetch(url).then(res=>res.json()).then(callbackFunction).catch(function() {
+    fetch(url).then(res=>res.json()).then(callbackFunction).catch(function(event) {
+        console.log(event);
         document.querySelector(".loadMoreOption button").setAttribute("onclick","");
         document.querySelector(".loadMoreOption button").textContent="--No more--";
         document.querySelector(".loadMoreOption button").classList.remove("regular");
@@ -33,15 +34,6 @@ function loadJSONData(url, callbackFunction){
 
 
 //GET DATA FUNCTIONS DUMMY
-function getCategories(per_page, current_page){
-    if(typeof per_page == 'undefined') per_page = 100;
-    if(typeof current_page == 'undefined') current_page = 1;
-    loadJSONData(siteurl + "categories/?per_page="+per_page+"&page="+current_page+"&_embed", function(cats){
-
-        //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
-        showCategories(cats);
-    });
-}
 function getCategoryById(id){
     loadJSONData(siteurl + "categories/"+id+"?_embed", function(cat){
 
@@ -56,27 +48,11 @@ function getCategoryBySlug(slug){
         if(typeof cats[0] !== "undefined") showCategory(cats[0]);
     });
 }
-function getSouvenirById(id){
-    loadJSONData(siteurl + "souvenirs/"+id+"?_embed", function(souvenir){
-
-        //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
-        showSouvenir(souvenir);
-    });
-}
 function getSouvenirBySlug(slug){
     loadJSONData(siteurl + "souvenirs/?slug="+slug+"&_embed", function(souvenirs){
 
         //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
         if(typeof souvenirs[0] !== "undefined") showSouvenir(souvenirs[0]);
-    });
-}
-function getSouvenirsByCategory(id, per_page, current_page){
-    if(typeof per_page == 'undefined') per_page = 100;
-    if(typeof current_page == 'undefined') current_page = 1;
-    loadJSONData(siteurl + "souvenirs/?per_page="+per_page+"&page="+current_page+"&categories="+id+"&_embed", function(souvenirs){
-
-        //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
-        showSouvenirs(souvenirs);
     });
 }
 function getArtworks(per_page, current_page){
@@ -136,53 +112,39 @@ function getPageBySlug(slug){
 }
 
 
-
-//SHOW DATA FUNCTIONS DUMMY
-function showCategories(cats){
-    console.log("Called Function - showCategories(...)");
-    console.log(cats);
-    cats.forEach(showCategory);
-}
-function showCategory(cat){
-    console.log("Called Function - showCategory(...)");
-    console.log(cat);
-}
-function showSouvenirs(souvenirs){
-    console.log("Called Function - showSouvenirs(...)");
-    console.log(souvenirs);
-    souvenirs.forEach(showSouvenir);
-}
-function showSouvenir(souvenir){
-    console.log("Called Function - showSouvenir(...)");
-    console.log(souvenir);
-}
-function showPages(pages){
-    console.log("Called Function - showPages(...)");
-    console.log(pages);
-    pages.forEach(showPage)
-}
-function showPage(page){
-    console.log("Called Function - showPage(...)");
-    console.log(page);
-}
-function showArtworks(artworks){
-    console.log("Called Function - showArtworks(...)");
-    console.log(artworks);
-    artworks.forEach(showArtwork);
-}
-function showArtwork(artwork){
-    console.log("Called Function - showArtwork(...)");
-    console.log(artwork);
-}
-
 //FINALIZED GET DATA FUNCTIONS
-function getSouvenirs(per_page, current_page, showSouvenirsCallBack){
+function getSouvenirs(per_page, current_page, callBack){
     if(typeof per_page == 'undefined') per_page = 100;
     if(typeof current_page == 'undefined') current_page = 1;
     loadJSONData(siteurl + "souvenirs/?per_page="+per_page+"&page="+current_page+"&_embed", function(souvenirs){
 
         //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
-        showSouvenirsCallBack(souvenirs);
+        callBack(souvenirs);
+    });
+}
+function getSouvenirById(id, callBack){
+    loadJSONData(siteurl + "souvenirs/"+id+"?_embed", function(souvenir){
+
+        //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
+        callBack(souvenir);
+    });
+}
+function getCategories(per_page, current_page, callBack){
+    if(typeof per_page == 'undefined') per_page = 100;
+    if(typeof current_page == 'undefined') current_page = 1;
+    loadJSONData(siteurl + "categories/?per_page="+per_page+"&page="+current_page+"&_embed", function(cats){
+
+        //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
+        callBack(cats);
+    });
+}
+function getSouvenirsByCategory(id, per_page, current_page, exclude, callBack){
+    if(typeof per_page == 'undefined') per_page = 100;
+    if(typeof current_page == 'undefined') current_page = 1;
+    loadJSONData(siteurl + "souvenirs/?per_page="+per_page+"&page="+current_page+"&categories="+id+"&exclude="+exclude+"&_embed", function(souvenirs){
+
+        //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
+        callBack(souvenirs);
     });
 }
 
@@ -205,40 +167,86 @@ function showSouvenirs_at_shop(souvenirs){
         }else{
             clone.querySelector(".note").textContent = "There is no variant of this item."
         }
-        clone.querySelector(".link").setAttribute("href",("product.html?id=" + souvenir.id));
+        clone.querySelector(".link").setAttribute("href",("product.html?id=" + souvenir.id + "&cat=" + souvenir.categories.join(",")));
 
         list.appendChild(clone);
     });
 }
+function showSouvenirs_at_product(souvenirs){
+    let list = document.querySelector(".productList");
+    let template = document.querySelector("#productTemplate").content;
+    souvenirs.forEach(function (souvenir){
+        console.log(souvenir);
+        let clone = template.cloneNode(true);
+
+        clone.querySelector(".view img").setAttribute("src", souvenir.acf.default_image);
+        clone.querySelector(".view img").setAttribute("alt", souvenir.title.rendered);
+        clone.querySelector(".name span").textContent = souvenir.title.rendered;
+        let descriptions = souvenir.content.rendered.split('</p>');
+        clone.querySelector(".description span").innerHTML = descriptions[0] + '</p>';
+        clone.querySelector(".price span").textContent = souvenir.acf.price;
+        if(souvenir.acf.variant_by != "" && souvenir.acf.variant_by != "None"){
+            clone.querySelector(".note span").textContent = "Item can be varied by "+souvenir.acf.variant_by;
+        }else{
+            clone.querySelector(".note").textContent = "There is no variant of this item."
+        }
+        clone.querySelector(".link").setAttribute("href",("product.html?id=" + souvenir.id + "&cat=" + souvenir.categories.join(",")));
+
+        list.appendChild(clone);
+    });
+}
+function showSouvenirDetails_at_product(souvenir){
+    document.querySelector(".productPageName").textContent = souvenir.title.rendered;
+
+}
 
 
 
 
-//HOW TO CALL FUNCTION TO LOAD INFORMATION FORM WORDPRESS SITE
-//getCategories();
-//getCategoryById(3);
-//getCategoryBySlug("candlestick");
-//getSouvenirs(2,2);
-//getSouvenirById(53);
-//getSouvenirBySlug("ufo-lysestage");
-//getSouvenirsByCategory(3,2,1);
-//getArtworks();
-//getArtworkById(87);
-//getArtworkBySlug("test-artwork");
-//getArtworksByCategory(8);
-//getPages(2,1);
-//getPageById(18);
-//getPageBySlug("souvenirs-shop");
 
-//getPageById(pagesID.home);
-//getPageBySlug(pagesSlug.home);
+
+
+
+
+
+
+
+
+
+
+
 
 
 let loadIndex=0;
+let loadPerPage = 6;
+let categoryList;
+let productParentCatID;
+let urlParams = new URLSearchParams(window.location.search);
 function loadData(){
     loadIndex += 1;
-    if(window.location.href.indexOf("/shop2.html") != -1){
-        getSouvenirs(4,loadIndex,showSouvenirs_at_shop);
+
+    if(window.location.href.indexOf("/shop.html") != -1){
+        getSouvenirs(loadPerPage,loadIndex,showSouvenirs_at_shop);
+    }else if(window.location.href.indexOf("/product.html") != -1){
+        let id = urlParams.get("id");
+        let cats = urlParams.get("cat").split(",");
+        getSouvenirById(id,showSouvenirDetails_at_product);
+        cats.forEach(function(cat){
+            if(categoryList[cat].parent == productParentCatID){
+                getSouvenirsByCategory(cat, (Math.round(loadPerPage/2)), loadIndex, id, showSouvenirs_at_product);
+            }
+        });
     }
 }
-loadData();
+function loadCategoires(){
+    getCategories(100,1,function(categories){
+        console.log(categories);
+        categoryList = categories;
+        categoryList.forEach(function(cat){
+            if(cat.slug == "souvenirs") productParentCatID = cat.id;
+        });
+        loadData();
+    });
+}
+//START RETRIEVE
+loadCategoires();

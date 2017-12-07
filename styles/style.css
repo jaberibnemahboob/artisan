@@ -1,0 +1,11 @@
+/* HERE ALL CUSTOM & STYLING THING WILL GOES */
+
+
+/* pageHeader */
+.pageHeader>div.background{background: var(--backgroundColor); box-shadow: 0px 3px 12px rgba(0,0,0,.175);}
+
+/* navigation => subNavigation */
+.pageHeader .navigationHolder nav.tabNavigation>ul>li ul{background: var(--backgroundColor); box-shadow: 0px 3px 12px rgba(0,0,0,.25);}
+
+/* aboutSection */
+.aboutSection>div.content article{box-shadow: 2px 3px 5px var(--headerColor);}

@@ -1,0 +1,123 @@
+*{box-sizing: border-box; margin: 0;}
+
+
+@media screen and (max-width: 764px){
+    /* FOR MOBILE VERTION */
+    /* DISPLAY WIDTH LESS THAN 764PX */
+    :root{
+        --logoSize: 4em;
+
+        --pageHeaderPadding: 0.5em;
+
+        --heroSectionHeight: 75vh;
+        --heroSectionPadding: 15em 2em;
+
+        --aboutSectionArticleWidth: 95%;
+        --aboutSectionArticleMargin: 2.5%;
+
+
+        --footerArticleWidth: 95%;
+        --footerArticleMargin: 2.5%;
+        --footerContentAlign: left;
+    }
+
+    .displayInMob{display: block !important;}
+}
+
+@media screen and (min-width: 764px){
+    /* FOR TAB / IPAD VERSION */
+    /* DISPLAY WIDTH LESS THAN 1050PX AND GREATER THAN 765PX */
+    :root{
+        --logoSize: 5em;
+
+        --pageHeaderPadding: 0.75em;
+
+        --heroSectionHeight: 60vh;
+        --heroSectionPadding: 15em 4em;
+
+        --aboutSectionArticleWidth: 31%;
+        --aboutSectionArticleMargin: 1.16%;
+
+
+        --footerArticleWidth: 31%;
+        --footerArticleMargin: 1.16%;
+        --footerContentAlign: center;
+    }
+
+
+    .displayInTab{display: block !important;}
+}
+
+@media screen and (min-width: 1024px){
+    /* FOR TAB / IPAD VERSION */
+    /* DISPLAY WIDTH GREATER THAN 1051PX */
+    :root{
+        --logoSize: 5em;
+
+        --pageHeaderPadding: 1em;
+
+        --heroSectionHeight: 75vh;
+        --heroSectionPadding: 10em 6em;
+
+        --aboutSectionArticleWidth: 31%;
+        --aboutSectionArticleMargin: 1.16%;
+
+
+        --footerArticleWidth: 31%;
+        --footerArticleMargin: 1.16%;
+        --footerContentAlign: center;
+    }
+
+}
+
+
+main{}
+section{}
+article{margin: 1rem 1rem;}
+header{}
+footer{padding: 2rem;}
+
+/* Position and Structure of .pageHeader */
+.pageHeader{position: fixed; width: 100%;}
+.pageHeader>div.background{position: absolute; width: 100%; height: 98%;}
+.pageHeader>div.content{position: relative; padding: var(--pageHeaderPadding); display: flex; justify-content: space-between;}
+.pageHeader div.logo{max-width: var(--logoSize);}
+
+
+/* Position and Structure of Navigation */
+.pageHeader .navigationHolder{position: relative;}
+
+.pageHeader .navigationHolder nav.tabNavigation{min-width: 600px;}
+.pageHeader .navigationHolder nav.tabNavigation>ul{display: flex; flex-wrap: nowrap;}
+.pageHeader .navigationHolder nav.tabNavigation>ul>li{width: 24%; margin: 0.66%; position: relative;}
+.pageHeader .navigationHolder nav.tabNavigation>ul>li ul{position: absolute; min-width: 200px;}
+.pageHeader .navigationHolder nav.tabNavigation>ul>li ul a{margin: 0 0 0.5em 0.5em;}
+.pageHeader .navigationHolder nav.tabNavigation>ul>li ul li{border-bottom: solid 0.1em rgba(85, 85, 85, 0.2); margin: 2rem; width: 80%;}
+.pageHeader .navigationHolder nav.tabNavigation>ul>li ul li:last-child{border: none;}
+
+.pageHeader .navigationHolder .mobileNavContent{position: absolute; width: 100vw; top: -0.5em; right: -0.5em; background: white;}
+.pageHeader .navigationHolder .mobileNavContent nav{padding-right: 0.5em;}
+.pageHeader .navigationHolder .mobileNavContent .closeNav{display: block; text-align: right;}
+.pageHeader .navigationHolder .mobileNavContent .closeNav a{font-size: 3em;}
+.pageHeader .navigationHolder .mobileNavContent nav ul li{border-bottom: solid 0.1em rgba(85, 85, 85, 0.2); margin: 2em 0 0 2.5em; width: 80%;}
+.pageHeader .navigationHolder .mobileNavContent nav ul li:last-child{margin-bottom: 3em;}
+.pageHeader .navigationHolder .mobileNavContent nav ul li a{ margin: 0 0 0.5em 0.5em;}
+.pageHeader .navigationHolder .mobileNavContent nav ul li ul li:last-child{border: none;}
+
+
+/* Position and Structure of .heroSection */
+.heroSection{height: 40vh; background-image: url(../images/heroBackgroundArtisan-1.jpg); width: 100%; height: auto;}
+.heroSection>.contentHolder .content{height: var(--heroSectionHeight); padding: 15em 3em; text-align: center; padding: var(--heroSectionPadding);}
+.heroSection>.contentHolder .content img{width: 1em;}
+
+/* Position and Structure of .aboutSection */
+.aboutSection{padding: 3rem 1rem;}
+.aboutSection>div.content{display: flex; flex-wrap: wrap;}
+.aboutSection>div.content article{padding: 1em; margin: var(--aboutSectionArticleMargin); width: var(--aboutSectionArticleWidth);}
+
+
+/* Position and Structure of .pageFooter */
+.pageFooter>div.content {display: flex; flex-wrap: wrap;}
+.pageFooter>div.content article{margin: var(--footerArticleMargin); width: var(--footerArticleWidth);}
+.pageFooter>div.content article .contentAlign{text-align: var(--footerContentAlign); height: 100%;}
+.pageFooter>div.content article .contentAlign .displayInlineBlock{height: 100%;}

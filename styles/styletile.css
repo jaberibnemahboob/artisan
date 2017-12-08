@@ -2,7 +2,7 @@
 *{box-sizing: border-box; margin: 0; padding: 0;}
 :root{
     --font_body:    300 13px 'Ubuntu', sans-serif;
-    --font_regular: 300 1.0em 'Ubuntu', sans-serif;
+    --font_regular: 300 1.15em 'Ubuntu', sans-serif;
     --font_h1:      700 3.0em 'Ubuntu', sans-serif;
     --font_h2:      500 2.3em 'Ubuntu', sans-serif;
     --font_h3:      500 1.7em 'Ubuntu', sans-serif;

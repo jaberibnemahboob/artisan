@@ -93,61 +93,20 @@
 
             <div class="topGap">&nbsp;</div>
 
-            <h1 class="txt-center">Contact us</h1>
+            <h1 class="txt-center">Order Online</h1>
 
-            <section class="contactSection">
+            <section class="shopSection">
+                <div class="content content-center">
 
-                <article class="contactInfo">
-                    <h5>We love to hear from you!</h5>
-                    <div class="content content-center">
-                        <form action="" method="post">
-                            <div class="formField">
-                                <label for="name">Name:</label>
-                                <input type="text" name="name" placeholder="Name" value="" />
-                            </div>
-                            <div class="formField">
-                                <label for="name">Phone:</label>
-                                <input type="text" name="phone" placeholder="Phone" value="" />
-                            </div>
-                            <div class="formField">
-                                <label for="email">Email:</label>
-                                <input type="text" name="email" placeholder="Email" value="" />
-                            </div>
-                            <div class="formField">
-                                <label for="name">Name:</label>
-                                <textarea name="message" placeholder="Your Message"></textarea>
-                            </div>
-                            <div class="formField">
-                                <input type="submit" class="btn regular" value="Send"/>
-                            </div>
-                        </form>
-                    </div>
-                </article>
+                    <div class="productList">
 
-                <hr class="displayInMob displayNone"/>
-
-                <article>
-                    <h5>Contact through regular method.</h5>
-                    <div class="content content-center">
-                        <div class="displayInlineBlock txt-left">
-                            <span class="displayBlock">Christian Edwards</span>
-                            <span class="displayBlock">Nyhavns Glaspustery</span>
-                            <span class="displayBlock">Toldbodsgade 4,</span>
-                            <span class="displayBlock">1253 Copenhagen K, Denmark</span>
-                            <span class="displayBlock">Telephone: +45 3313 0134</span>
-                            <span class="displayBlock">info@copenhagen.dk</span>
-                            <span class="displayBlock">http://www.copenhagenglass.dk</span>
-                        </div>
                     </div>
 
-                    <hr/>
-
-                    <h5>Come and visit us</h5>
-                    <div class="content content-center">
-                        <iframe width="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.5100876094302!2d12.589602515547192!3d55.68011900506338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46525322d44023c7%3A0x37ab900c9154a0ad!2sToldbodgade+4%2C+1253+K%C3%B8benhavn+K!5e0!3m2!1sen!2sdk!4v1512557740653" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <div class="loadMoreOption txt-center">
+                        <button class="btn regular" onclick="loadData()">Load More</button>
                     </div>
-                </article>
 
+                </div>
             </section>
 
         </main>
@@ -201,6 +160,20 @@
         </footer>
 
         <script type="text/javascript" src="scripts/loader.js"></script>
+
+
+        <template id="productTemplate">
+            <article class="product shadowBox">
+                <div class="view"><img src="http://i2.wp.com/www.copenhagenglass.dk/wp-content/uploads/2017/03/dr%C3%A5bevase..jpg" alt="Drop Vase"/></div>
+                <div class="info">
+                    <h4 class="name"><span>Name</span></h4>
+                    <p class="description"><span>Description</span></p>
+                    <p class="price">Price: <span></span> dkk</p>
+                    <p class="note"><b>*</b> <span></span></p>
+                    <p><a href="#" class="link btn regular">Order Now</a></p>
+                </div>
+            </article>
+        </template>
 
     </body>
 </html>

@@ -21,7 +21,7 @@ body{font: var(--font_body); color: var(--textColor);}
 main{}
 section{}
 article{}
-p,a,span,li,ul,ol,font{font: var(--font_regular); color: var(--textColor); text-decoration: none; list-style: none;}
+p,a,span,font{font: var(--font_regular); color: var(--textColor); text-decoration: none; list-style: none;}
 a:hover, a{color: var(--highlight);}
 
 form{width: 100%;}

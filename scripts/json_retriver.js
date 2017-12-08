@@ -5,8 +5,8 @@ let pagesID = {
     exhibitions : 10,
     process : 12,
     workshops : 14,
-    luxuryArtworks : 16,
-    souvenirsShop : 18,
+    projects : 16,
+    shop : 18,
     contact : 20
 }
 let pagesSlug = {
@@ -15,14 +15,13 @@ let pagesSlug = {
     exhibitions : "exhibitions",
     process : "process",
     workshops : "workshops",
-    luxuryArtworks : "luxury-artworks",
-    souvenirsShop : "souvenirs-shop",
+    projects : "luxury-artworks",
+    shop : "souvenirs-shop",
     contact : "contact"
 }
 
 
 function loadJSONData(url, callbackFunction){
-    console.log(url);
     fetch(url).then(res=>res.json()).then(callbackFunction).catch(function(event) {
         console.log(event);
         if(document.querySelector(".loadMoreOption button") != null){
@@ -203,6 +202,7 @@ function showSouvenirDetails_at_product(souvenir){
     console.log(souvenir);
 
     document.querySelector(".productPageName").textContent = souvenir.title.rendered;
+    document.title = souvenir.title.rendered + " | E-commerce Shop | Christian Edwards";
 
     let holder = document.querySelector(".productDetails");
     let template = document.querySelector("#productDetailsTemplate").content;

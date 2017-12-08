@@ -371,7 +371,7 @@ function showPage_at_anyPage(page){
 // CHANGE THE SIZE BASE ON THIS RATIO
 function fixIframeSize(){
     document.querySelectorAll("iframe").forEach(function(iframe){
-        iframe.style.height = (((iframe.parentNode.clientWidth / 800) * 500) + "px");
+        iframe.style.height = (((iframe.parentNode.clientWidth / 800 * 0.96) * 500) + "px");
     });
 }
 window.addEventListener("resize", function(e) {

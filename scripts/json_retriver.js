@@ -106,13 +106,6 @@ function getPageById(id){
         showPage(page);
     });
 }
-function getPageBySlug(slug){
-    loadJSONData(siteurl + "pages/?slug="+slug+"&_embed", function(pages){
-
-        //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
-        if(typeof pages[0] !== "undefined") showPage(pages[0]);
-    });
-}
 
 
 //FINALIZED GET DATA FUNCTIONS
@@ -148,6 +141,13 @@ function getSouvenirsByCategory(id, per_page, current_page, exclude, callBack){
 
         //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
         callBack(souvenirs);
+    });
+}
+function getPageBySlug(slug, callBack){
+    loadJSONData(siteurl + "pages/?slug="+slug+"&_embed", function(pages){
+
+        //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
+        if(typeof pages[0] !== "undefined") callBack(pages[0]);
     });
 }
 
@@ -351,6 +351,13 @@ function showSouvenirDetails_at_product(souvenir){
     changeImageOnSelectVariant();
 
 }
+function showPage_at_anyPage(page){
+    document.querySelector("h1.pageHeaderName").textContent = page.title.rendered;
+
+    document.querySelector("section.pageSection div.pageDetails").innerHTML = page.content.rendered;
+
+    fixIframeSize();
+}
 
 
 
@@ -358,8 +365,18 @@ function showSouvenirDetails_at_product(souvenir){
 
 
 
-
-
+// RESIZE VIDEO IFRAME ON CHANGE OF SCREEN
+// DEFAULT IFRAME SIZE WIDTH 800PX & HEIGHT 450PX
+// OR IT'S GIVEN WITH IFRAME ITSELF
+// CHANGE THE SIZE BASE ON THIS RATIO
+function fixIframeSize(){
+    document.querySelectorAll("iframe").forEach(function(iframe){
+        iframe.style.height = (((iframe.parentNode.clientWidth / 800) * 500) + "px");
+    });
+}
+window.addEventListener("resize", function(e) {
+    fixIframeSize();
+});
 
 
 
@@ -386,16 +403,29 @@ function loadData(){
                 getSouvenirsByCategory(cat, (Math.round(loadPerPage/2)), loadIndex, id, showSouvenirs_at_product);
             }
         });
+    }else if(window.location.href.indexOf("/biography.html") != -1){
+        getPageBySlug(pagesSlug.biography,showPage_at_anyPage);
+    }else if(window.location.href.indexOf("/process.html") != -1){
+        getPageBySlug(pagesSlug.process,showPage_at_anyPage);
+    }else if(window.location.href.indexOf("/exhibitions.html") != -1){
+        getPageBySlug(pagesSlug.exhibitions,showPage_at_anyPage);
+    }else if(window.location.href.indexOf("/workshops.html") != -1){
+        getPageBySlug(pagesSlug.workshops,showPage_at_anyPage);
     }
 }
 function loadCategoires(){
-    getCategories(100,1,function(categories){
-        categoryList = categories;
-        categoryList.forEach(function(cat){
-            if(cat.slug == "souvenirs") productParentCatID = cat.id;
+    if((window.location.href.indexOf("/shop.html") != -1) || (window.location.href.indexOf("/product.html") != -1)){
+        getCategories(100,1,function(categories){
+            categoryList = categories;
+            categoryList.forEach(function(cat){
+                if(cat.slug == "souvenirs") productParentCatID = cat.id;
+            });
+            loadData();
         });
+    }else{
+        categoryList = new Array();
         loadData();
-    });
+    }
 }
 //START RETRIEVE
 loadCategoires();

@@ -1,0 +1,5 @@
+.carousel-slider-outer{position: static; margin: 3rem auto;}
+.carousel-slider{position: relative; top: 0; width: 100%;}
+.carousel-slider__item{position: absolute; top: 0; width: 100%;}
+.carousel-slider__item img{width: 100%;}
+.carousel-slider__item a{display: block;}

@@ -4,7 +4,7 @@
 // SO, EMPTY LINK WILL NOT WORK AT ALL
 document.querySelectorAll('a[href="#"]').forEach(function(link){
     link.addEventListener("click",function(event){
-        event.preventDefault()
+        event.preventDefault();
     });
 });
 
@@ -39,7 +39,6 @@ document.querySelectorAll(".pageHeader>div.background").forEach(function(backgro
         });
     }
 });
-
 
 
 

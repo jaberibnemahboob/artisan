@@ -2,9 +2,10 @@
 let jsList = [
     "scripts/common_functions.js",
     "scripts/navigation.js",
-    "scripts/json_retriver.js",
     "https://use.fontawesome.com/3bf73e391b.js",
-    "scripts/effects.js"
+    "scripts/effects.js",
+    "scripts/json_retriver.js",
+    "scripts/remarke_owncarousel.js"
 ];
 
 
@@ -17,3 +18,5 @@ jsList.forEach(function(filename){
     fileref.setAttribute("src", filename);
     if (typeof fileref!="undefined") document.getElementsByTagName("body")[0].appendChild(fileref);
 });
+
+

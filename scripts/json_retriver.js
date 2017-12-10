@@ -173,7 +173,7 @@ function showSouvenirs_at_shop(souvenirs){
         }else{
             clone.querySelector(".note").textContent = "There is no variant of this item."
         }
-        clone.querySelector(".link").setAttribute("href",("product.html?id=" + souvenir.id + "&cat=" + souvenir.categories.join(",")));
+        clone.querySelectorAll(".link").forEach(function(item){item.setAttribute("href",("product.html?id=" + souvenir.id + "&cat=" + souvenir.categories.join(",")))});
 
         list.appendChild(clone);
     });
@@ -192,7 +192,7 @@ function showSouvenirs_at_product(souvenirs){
         clone.querySelector(".view img").setAttribute("alt", souvenir.title.rendered);
         clone.querySelector(".name span").textContent = souvenir.title.rendered;
         clone.querySelector(".price span").textContent = souvenir.acf.price;
-        clone.querySelector(".link").setAttribute("href",("product.html?id=" + souvenir.id + "&cat=" + souvenir.categories.join(",")));
+        clone.querySelectorAll(".link").forEach(function(item){item.setAttribute("href",("product.html?id=" + souvenir.id + "&cat=" + souvenir.categories.join(",")))});
 
         list.appendChild(clone);
     });

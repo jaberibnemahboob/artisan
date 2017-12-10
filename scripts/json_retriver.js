@@ -223,85 +223,85 @@ function showSouvenirDetails_at_product(souvenir){
     if(variantsArray.length>0){
         variantsArray.forEach(function(item,index){
             switch(index){
-                case 1:
+                case 0:
                     variantsImg.push(souvenir.acf.first_variant_image);
                     break;
-                case 2:
+                case 1:
                     variantsImg.push(souvenir.acf.second_variant_image);
                     break;
-                case 3:
+                case 2:
                     variantsImg.push(souvenir.acf.third_variant_image);
                     break;
-                case 4:
+                case 3:
                     variantsImg.push(souvenir.acf.fourth_variant_image);
                     break;
-                case 5:
+                case 4:
                     variantsImg.push(souvenir.acf.fifth_variant_image);
                     break;
-                case 6:
+                case 5:
                     variantsImg.push(souvenir.acf.sixth_variant_image);
                     break;
-                case 7:
+                case 6:
                     variantsImg.push(souvenir.acf.seventh_variant_image);
                     break;
-                case 8:
+                case 7:
                     variantsImg.push(souvenir.acf.eighth_variant_image);
                     break;
-                case 9:
+                case 8:
                     variantsImg.push(souvenir.acf.ninth_variant_image);
                     break;
-                case 10:
+                case 9:
                     variantsImg.push(souvenir.acf.tenth_variant_image);
                     break;
-                case 11:
+                case 10:
                     variantsImg.push(souvenir.acf.eleventh_variant_image);
                     break;
-                case 12:
+                case 11:
                     variantsImg.push(souvenir.acf.twelfth_variant_image);
                     break;
-                case 13:
+                case 12:
                     variantsImg.push(souvenir.acf.thirteenth_variant_image);
                     break;
-                case 14:
+                case 13:
                     variantsImg.push(souvenir.acf.fourteenth_variant_image);
                     break;
-                case 15:
+                case 14:
                     variantsImg.push(souvenir.acf.fifteenth_variant_image);
                     break;
-                case 16:
+                case 15:
                     variantsImg.push(souvenir.acf.sixteenth_variant_image);
                     break;
-                case 17:
+                case 16:
                     variantsImg.push(souvenir.acf.seventeenth_variant_image);
                     break;
-                case 18:
+                case 17:
                     variantsImg.push(souvenir.acf.eighteenth_variant_image);
                     break;
-                case 19:
+                case 18:
                     variantsImg.push(souvenir.acf.nineteenth_variant_image);
                     break;
-                case 20:
+                case 19:
                     variantsImg.push(souvenir.acf.twentieth_variant_image);
                     break;
-                case 21:
+                case 20:
                     variantsImg.push(souvenir.acf["twenty-first_variant_image"]);
                     break;
-                case 22:
+                case 21:
                     variantsImg.push(souvenir.acf["twenty-second_variant_image"]);
                     break;
-                case 23:
+                case 22:
                     variantsImg.push(souvenir.acf["twenty-third_variant_image"]);
                     break;
-                case 24:
+                case 23:
                     variantsImg.push(souvenir.acf["twenty-fourth_variant_image"]);
                     break;
-                case 25:
+                case 24:
                     variantsImg.push(souvenir.acf["twenty-fifth_variant_image"]);
                     break;
                 default:
                     break;
             }
-        })
+        });
     }
     cats.forEach(function(id){
         categoryList.forEach(function(cat){

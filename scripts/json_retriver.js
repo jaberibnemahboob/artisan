@@ -209,7 +209,7 @@ function showSouvenirDetails_at_product(souvenir){
 
     let variant_by = souvenir.acf.variant_by;
     let variants = (variant_by!="None") ? souvenir.acf[(variant_by.toLowerCase()+"_variants")] : "None";
-    let variantsList = (variants!="None") ? souvenir.acf[(variants.toLowerCase().replace(" ","_"))] : new Array();
+    let variantsList = (variants!="None") ? souvenir.acf[(variants.toLowerCase().replace(/ /g,"_"))] : new Array();
     let variantsListSelectCode = "";
     let variantsArray = variantsList;
     let categories = new Array();

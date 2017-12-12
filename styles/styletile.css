@@ -6,8 +6,8 @@
     --font_h1:      700 3.0rem 'Ubuntu', sans-serif;
     --font_h2:      500 2.3rem 'Ubuntu', sans-serif;
     --font_h3:      500 1.7rem 'Ubuntu', sans-serif;
-    --font_h4:      500 1.5rem 'Ubuntu', sans-serif;
-    --font_h5:      500 1.3rem 'Ubuntu', sans-serif;
+    --font_h4:      500 1.3rem 'Ubuntu', sans-serif;
+    --font_h5:      500 1.2rem 'Ubuntu', sans-serif;
     --font_h6:      500 1.1rem 'Ubuntu', sans-serif;
     --font_nav:     400 1.3rem 'Ubuntu', sans-serif;
 
@@ -23,7 +23,7 @@ body{font: var(--font_body); color: var(--textColor);}
 main{}
 section{}
 article{}
-p,a,span,li,ul,ol,font{font: var(--font_regular); color: var(--textColor); text-decoration: none; list-style: none;}
+p,a,li,ul,ol,font,div{font: var(--font_regular); color: var(--textColor); text-decoration: none; list-style: none;}
 a:hover, a{color: var(--highlight);}
 
 form{width: 100%;}
@@ -73,7 +73,7 @@ i{color: var(--accentColor);}
 .btn.buy{font-size: 1rem; padding: 0.25rem 2rem; background-color: var(--highlight); color: var(--backgroundColor);}
 .highlightBox{border-left: solid 0.2em var(--accentColor); padding: 0.5em;}
 .shadowBox{box-shadow: 2px 3px 5px var(--headerColor);}
-.price, .price span{color: var(--highlight); font-weight: bold;}
+.price, .price span{color: var(--highlight); font-weight: 500;}
 footer.pageFooter{border-top: 1px solid var(--accentColor);}
 iframe{width: 100% !important; padding: 0.5rem 2rem;}
 

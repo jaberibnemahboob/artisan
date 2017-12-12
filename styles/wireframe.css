@@ -5,7 +5,7 @@
     /* FOR MOBILE VERTION */
     /* DISPLAY WIDTH LESS THAN 764PX */
     :root{
-        --logoSize: 4em;
+        --logoSize: 4rem;
 
         --pageHeaderPadding: 0.5em;
 
@@ -44,7 +44,7 @@
     /* FOR TAB / IPAD VERSION */
     /* DISPLAY WIDTH LESS THAN 1050PX AND GREATER THAN 765PX */
     :root{
-        --logoSize: 5em;
+        --logoSize: 4rem;
 
         --pageHeaderPadding: 0.75em;
 
@@ -84,7 +84,7 @@
     /* FOR TAB / IPAD VERSION */
     /* DISPLAY WIDTH GREATER THAN 1051PX */
     :root{
-        --logoSize: 5em;
+        --logoSize: 4rem;
 
         --pageHeaderPadding: 1em;
 

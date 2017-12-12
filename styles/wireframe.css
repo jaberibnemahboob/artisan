@@ -158,7 +158,7 @@ footer{padding: 1rem;}
 /* Position and Structure of .heroSection */
 .heroSection{height: 95vh; background-image: url(../images/heroBackgroundArtisan-3.jpg); width: 100%;}
 .heroSection>.contentHolder .content{height: var(--heroSectionHeight);  text-align: center; padding: var(--heroSectionPadding);}
-.heroSection>.contentHolder .content .box{ width: var(--heroSectionBoxWidth); height: auto; margin: var(--heroSectionMargin); background-color: rgba(85, 85, 85, 0.5); padding: 1em; box-shadow: --boxShadow;}
+.heroSection>.contentHolder .content .box{ width: var(--heroSectionBoxWidth); height: auto; margin: var(--heroSectionMargin); background-color: rgba(85, 85, 85, 0.5); padding: 1em; box-shadow: var(--boxShadow);}
 
 #downCarat{ margin-left: 48%;}
 

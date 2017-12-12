@@ -9,49 +9,80 @@
 </head>
 <body>
 
-<aside id="offCanvasNav" class="hidden">
-    <nav>
-        <a href="#" class="hidden" onclick="toggleMenu()" id="times_nav_header"><i class="fa fa-times" aria-hidden="true"></i></a>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#"  onclick="toggleSubMenu()"> About <i id="subCategoryCaret" class="fa fa-chevron-left"></i></a>
-                <ul id="subCategoryMenu" class="hidden">
-                    <li><a href="biography.html">Biography</a></li>
-                    <li><a href="process.html">Process</a></li>
-                    <li><a href="exhibitions.html">Exhibitions</a></li>
-                    <li><a href="workshops.html">Workshops</a></li>
-                </ul>
-            </li>
-            <li><a href="#" onclick="toggleSubMenuArt()">Artwork <i id="subCategoryArtCaret" class="fa fa-chevron-left"></i></a>
-                <ul id="subCategoryArt" class="hidden">
-                    <li><a href="luxuryartworks.html">Projects</a></li>
-                    <li><a href="souvenirsshop.html">Shop</a></li>
-                </ul>
-            </li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</aside>
-
-<header>
-
-    <a href="#" onclick="toggleMenu()">
-
-        <div class="menuHeroPg">
-
-            <div class="hamburgerMenu" id="line_1"></div>
-            <div class="hamburgerMenu" id="line_2"></div>
-            <div class="hamburgerMenu" id="line_3"></div>
-
+<header class="pageHeader">
+    <!-- LOGO AND MENU WILL GOES HERE -->
+    <div class="background">&nbsp;</div>
+    <div class="content content-center">
+        <div class="logoHolder">
+            <div class="content">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt="Logo"/></a>
+                </div>
+            </div>
         </div>
+        <div class="displayNone displayInTab navigationHolder">
+            <div class="content">
+                <nav class="tabNavigation atHomePage">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li>
+                            <a href="#" onclick="toggleSubMenu('tabNavigation')"><i class="subCategoryCaret fa fa-chevron-left"></i> About </a>
 
-    </a>
-    <a href="index.html">
+                            <ul class="subCategoryMenu hidden">
+                                <li><a href="biography.html">Biography</a></li>
+                                <li><a href="workshops.html">Workshops</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" onclick="toggleSubMenuArt('tabNavigation')"><i class="subCategoryArtCaret fa fa-chevron-left"></i> ArtWork </a>
+                            <ul class="subCategoryArt hidden">
+                                <li><a href="projects.html">Projects</a></li>
+                                <li><a href="shop.html">Shop</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="displayNone displayInMob navigationHolder">
+            <div class="content">
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div class="hamburgerBar hamburgerBar1"></div>
+                    <div class="hamburgerBar hamburgerBar2"></div>
+                    <div class="hamburgerBar hamburgerBar3"></div>
+                </div>
+            </div>
 
-        <img id="miniLogo" src="images/logo.png" alt="Christian Edward's Logo">
-
-    </a>
-
+            <div class="mobileNavContent hidden" id="offCanvasNav">
+                <nav class="mobileNavigation">
+                    <div class="closeNav">
+                        <a href="#" class="hidden" onclick="toggleMenu()" id="times_nav_header">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li>
+                            <a href="#" onclick="toggleSubMenu('mobileNavigation')"><i class="subCategoryCaret fa fa-chevron-right"></i> About </a>
+                            <ul class="subCategoryMenu hidden">
+                                <li><a href="biography.html">Biography</a></li>
+                                <li><a href="workshops.html">Workshops</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" onclick="toggleSubMenuArt('mobileNavigation')"><i class="subCategoryArtCaret fa fa-chevron-right"></i> Artwork </a>
+                            <ul class="subCategoryArt hidden">
+                                <li><a href="projects.html">Projects</a></li>
+                                <li><a href="shop.html">Shop</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
 </header>
 
 <main>

@@ -54,9 +54,11 @@
 }
 .lightBox-content {
     background-color: #fefefe;
-    margin: 5% auto; /* 15% from the top and centered */
+    margin: 5% auto; /* 5% from the top and centered */
     padding: 1rem;
     border: 1px solid #888;
     border-radius: 0.5rem;
-    width: 90%; /* Could be more or less, depending on screen size */
+    position: relative;
 }
+.lightBox-content p{margin: 0; padding: 0;}
+.lightBox-content .close{ position: absolute; right: 0.5rem; top: 0.5rem;}

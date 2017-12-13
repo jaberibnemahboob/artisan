@@ -50,8 +50,24 @@ function enlargeImage(targetObj){
     targetObj.querySelectorAll("img").forEach(function(img){
         img.classList.add("enlarge");
         img.addEventListener("click",function(event){
+            let factor = 0.90;
+            let vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0) * factor;
+            let vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) * factor;
+            let nh;
+            let nw;
+            if(vh < vw){
+                //work with vh
+                nh = vh;
+                nw = nh / img.clientHeight * img.clientWidth;
+            }else{
+                //work with vw
+                nw = vw;
+                nh = nw / img.clientWidth * img.clientHeight;
+            }
             document.querySelector(".lightBox img").setAttribute("src",img.getAttribute("src"));
             document.querySelector(".lightBox img").setAttribute("alt",img.getAttribute("alt"));
+            document.querySelector(".lightBox .lightBox-content").style.width = nw + "px";
+            document.querySelector(".lightBox .lightBox-content").style.margin = Math.round((1 - factor - 0.06) / 2 * 100) + "% auto";
             document.querySelector(".lightBox").style.display = "block";
         });
     });

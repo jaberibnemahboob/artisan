@@ -12,77 +12,77 @@
 <header class="pageHeader">
     <!-- LOGO AND MENU WILL GOES HERE -->
     <div class="background">&nbsp;</div>
-    <div class="content content-center">
-        <div class="logoHolder">
-            <div class="content">
-                <div class="logo">
-                    <a href="index.html"><img src="images/logo.png" alt="Logo"/></a>
-                </div>
-            </div>
-        </div>
-        <div class="displayNone displayInTab navigationHolder">
-            <div class="content">
-                <nav class="tabNavigation">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li>
-                            <a href="#" onclick="toggleSubMenu('tabNavigation')"><i class="subCategoryCaret fa fa-chevron-left"></i> About </a>
-
-                            <ul class="subCategoryMenu hidden">
-                                <li><a href="biography.html">Biography</a></li>
-                                <li><a href="workshops.html">Workshops</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" onclick="toggleSubMenuArt('tabNavigation')"><i class="subCategoryArtCaret fa fa-chevron-left"></i> Glass Art </a>
-                            <ul class="subCategoryArt hidden">
-                                <li><a href="projects.html">Projects</a></li>
-                                <li><a href="shop.html">Shop</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="displayNone displayInMob navigationHolder">
-            <div class="content">
-                <div class="hamburger" onclick="toggleMenu()">
-                    <div class="hamburgerBar hamburgerBar1"></div>
-                    <div class="hamburgerBar hamburgerBar2"></div>
-                    <div class="hamburgerBar hamburgerBar3"></div>
-                </div>
-            </div>
-
-            <div class="mobileNavContent hidden" id="offCanvasNav">
-                <nav class="mobileNavigation">
-                    <div class="closeNav">
-                        <a href="#" class="hidden" onclick="toggleMenu()" id="times_nav_header">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </a>
+            <div class="content content-center">
+                <div class="logoHolder">
+                    <div class="content">
+                        <div class="logo">
+                            <a href="index.html"><img src="images/logo.png" alt="Logo"/></a>
+                        </div>
                     </div>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li>
-                            <a href="#" onclick="toggleSubMenu('mobileNavigation')"><i class="subCategoryCaret fa fa-chevron-right"></i> About </a>
-                            <ul class="subCategoryMenu hidden">
-                                <li><a href="biography.html">Biography</a></li>
-                                <li><a href="workshops.html">Workshops</a></li>
+                </div>
+                <div class="displayNone displayInTab navigationHolder">
+                    <div class="content">
+                        <nav class="tabNavigation">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li>
+                                    <a href="#" onclick="toggleSubMenu('tabNavigation')">About <i class="subCategoryCaret fa fa-chevron-left"></i></a>
+
+                                    <ul class="subCategoryMenu hidden">
+                                        <li><a href="biography.html">Biography</a></li>
+                                        <li><a href="workshops.html">Workshops</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="toggleSubMenuArt('tabNavigation')">Glass Art <i class="subCategoryArtCaret fa fa-chevron-left"></i></a>
+                                    <ul class="subCategoryArt hidden">
+                                        <li><a href="projects.html">Projects</a></li>
+                                        <li><a href="shop.html">Shop</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html">Contact</a></li>
                             </ul>
-                        </li>
-                        <li>
-                            <a href="#" onclick="toggleSubMenuArt('mobileNavigation')"><i class="subCategoryArtCaret fa fa-chevron-right"></i> Glass Art </a>
-                            <ul class="subCategoryArt hidden">
-                                <li><a href="projects.html">Projects</a></li>
-                                <li><a href="shop.html">Shop</a></li>
+                        </nav>
+                    </div>
+                </div>
+                <div class="displayNone displayInMob navigationHolder">
+                    <div class="content">
+                        <div class="hamburger" onclick="toggleMenu()">
+                            <div class="hamburgerBar hamburgerBar1"></div>
+                            <div class="hamburgerBar hamburgerBar2"></div>
+                            <div class="hamburgerBar hamburgerBar3"></div>
+                        </div>
+                    </div>
+
+                    <div class="mobileNavContent hidden" id="offCanvasNav">
+                        <nav class="mobileNavigation">
+                            <div class="closeNav">
+                                <a href="#" class="hidden" onclick="toggleMenu()" id="times_nav_header">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                             <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li>
+                                    <a href="#" onclick="toggleSubMenu('mobileNavigation')"> About <i class="subCategoryCaret fa fa-chevron-left"></i></a>
+                                    <ul class="subCategoryMenu hidden">
+                                        <li><a href="biography.html">Biography</a></li>
+                                        <li><a href="workshops.html">Workshops</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="toggleSubMenuArt('mobileNavigation')">Glass Art <i class="subCategoryArtCaret fa fa-chevron-left"></i></a>
+                                    <ul class="subCategoryArt hidden">
+                                        <li><a href="projects.html">Projects</a></li>
+                                        <li><a href="shop.html">Shop</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html">Contact</a></li>
                             </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
+                        </nav>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 </header>
 
 <main class="pageMain">
@@ -152,6 +152,13 @@
 </footer>
 
 <script type="text/javascript" src="scripts/loader.js"></script>
+
+        <div class="lightBox">
+            <div class="lightBox-content">
+                <p class="txt-right"><span class="close displayInlineBlock whiteCircle2 cursor-pointer"><i class="fa fa-times"></i></span></p>
+                <img src="" alt=""/>
+            </div>
+        </div>
 
 </body>
 </html>

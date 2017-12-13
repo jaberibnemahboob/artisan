@@ -46,6 +46,7 @@ nav a{text-decoration: none; font: var(--font_nav); color: var(--textColor);}
 nav a.active, nav a:hover{text-decoration: none; font: var(--font_nav); color: var(--highlight);}
 i{color: var(--accentColor);}
 .invert{color: var(--backgroundColor);}
+.hamburger{cursor: pointer;}
 .hamburgerBar{color: var(--textColor); width:4em; height: 0.5em;
     background-color: var(--accentColor); /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(left, #7b0e0b, #f1a006); /* For Safari 5.1 to 6.0 */

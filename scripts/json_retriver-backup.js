@@ -30,6 +30,79 @@ function loadJSONData(url, callbackFunction){
 }
 
 
+
+//GET DATA FUNCTIONS DUMMY
+function getCategoryById(id){
+    loadJSONData(siteurl + "categories/"+id+"?_embed", function(cat){
+
+        //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
+        showCategory(cat);
+    });
+}
+function getCategoryBySlug(slug){
+    loadJSONData(siteurl + "categories/?slug="+slug+"&_embed", function(cats){
+
+        //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
+        if(typeof cats[0] !== "undefined") showCategory(cats[0]);
+    });
+}
+function getSouvenirBySlug(slug){
+    loadJSONData(siteurl + "souvenirs/?slug="+slug+"&_embed", function(souvenirs){
+
+        //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
+        if(typeof souvenirs[0] !== "undefined") showSouvenir(souvenirs[0]);
+    });
+}
+function getArtworks(per_page, current_page){
+    if(typeof per_page == 'undefined') per_page = 100;
+    if(typeof current_page == 'undefined') current_page = 1;
+    loadJSONData(siteurl + "artworks/?per_page="+per_page+"&page="+current_page+"&_embed", function(artworks){
+
+        //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
+        showArtworks(artworks);
+    });
+}
+function getArtworkById(id){
+    loadJSONData(siteurl + "artworks/"+id+"?_embed", function(artwork){
+
+        //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
+        showArtwork(artwork);
+    });
+}
+function getArtworkBySlug(slug){
+    loadJSONData(siteurl + "artworks/?slug="+slug+"&_embed", function(artworks){
+
+        //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
+        if(typeof artworks[0] !== "undefined") showArtwork(artworks[0]);
+    });
+}
+function getArtworksByCategory(id, per_page, current_page){
+    if(typeof per_page == 'undefined') per_page = 100;
+    if(typeof current_page == 'undefined') current_page = 1;
+    loadJSONData(siteurl + "artworks/?per_page="+per_page+"&page="+current_page+"&categories="+id+"&_embed", function(artworks){
+
+        //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
+        showArtworks(artworks);
+    });
+}
+function getPages(per_page, current_page){
+    if(typeof per_page == 'undefined') per_page = 100;
+    if(typeof current_page == 'undefined') current_page = 1;
+    loadJSONData(siteurl + "pages/?per_page="+per_page+"&page="+current_page+"&_embed", function(pages){
+
+        //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
+        showPages(pages);
+    });
+}
+function getPageById(id){
+    loadJSONData(siteurl + "pages/"+id+"?_embed", function(page){
+
+        //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
+        showPage(page);
+    });
+}
+
+
 //FINALIZED GET DATA FUNCTIONS
 function getSouvenirs(per_page, current_page, callBack){
     if(typeof per_page == 'undefined') per_page = 100;
@@ -306,6 +379,28 @@ function showProjects_at_projects(projects){
         enlargeImage(list.querySelector("article:last-child"));
     });
 }
+
+
+
+
+
+
+
+// RESIZE VIDEO IFRAME ON CHANGE OF SCREEN
+// DEFAULT IFRAME SIZE WIDTH 800PX & HEIGHT 450PX
+// OR IT'S GIVEN WITH IFRAME ITSELF
+// CHANGE THE SIZE BASE ON THIS RATIO
+function fixIframeSize(){
+    document.querySelectorAll("iframe").forEach(function(iframe){
+        iframe.style.height = (((iframe.parentNode.clientWidth / 800 * 0.96) * 500) + "px");
+    });
+}
+window.addEventListener("resize", function(e) {
+    fixIframeSize();
+});
+
+
+
 
 
 

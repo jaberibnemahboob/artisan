@@ -85,3 +85,18 @@ document.querySelectorAll(".movingParallax").forEach(function(item){
         item.style.backgroundPosition = "50% "+ calculatedPosition +"%";
     }
 });
+
+
+
+// RESIZE VIDEO IFRAME ON CHANGE OF SCREEN
+// DEFAULT IFRAME SIZE WIDTH 800PX & HEIGHT 450PX
+// OR IT'S GIVEN WITH IFRAME ITSELF
+// CHANGE THE SIZE BASE ON THIS RATIO
+function fixIframeSize(){
+    document.querySelectorAll("iframe").forEach(function(iframe){
+        iframe.style.height = (((iframe.parentNode.clientWidth / 800 * 0.96) * 500) + "px");
+    });
+}
+window.addEventListener("resize", function(e) {
+    fixIframeSize();
+});

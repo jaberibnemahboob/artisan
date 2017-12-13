@@ -34,6 +34,7 @@ label{padding-left: 1rem; font: var(--font_h5);}
 
 img{width: 100%;}
 img.displayInline{width: 1rem;}
+img.enlarge{cursor: zoom-in;}
 p{margin: 0.75rem 0rem;}
 h1{font: var(--font_h1); color: var(--textColor); margin: 0.8rem 0.1rem;}
 h2{font: var(--font_h2); color: var(--headerColor); margin: 0.9rem 0.1rem;}

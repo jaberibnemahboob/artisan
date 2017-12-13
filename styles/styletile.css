@@ -85,5 +85,5 @@ iframe{width: 100% !important; padding: 0.5rem 2rem;}
 .project img.aligncenter,img.alignnone { display: block; float: none; margin: 2.5%; width: 95%; height: auto; }
 
 /************************ animations ************************/
-.arrow_carrot { margin-right: 1em; transform: rotate(90deg); animation: rotatingArrow ease 2s;}
+.arrow_carrot { margin-right: 1em; transform: rotate(270deg); animation: rotatingArrow ease 2s;}
 @keyframes rotatingArrow { to { transition: all 1s; } from { transition: all 1s; } }

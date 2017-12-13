@@ -5,7 +5,10 @@ let jsList = [
     "https://use.fontawesome.com/3bf73e391b.js",
     "scripts/effects.js",
     "scripts/json_retriver.js",
-    "scripts/remarke_owncarousel.js"
+    "scripts/remarke_owncarousel.js",
+    "3rdparty/smooth-scroll/dist/js/smooth-scroll.min.js",
+    "3rdparty/smooth-scroll/dist/js/smooth-scroll.polyfills.min.js",
+    "scripts/smooth_scroll_helper.js"
 ];
 
 

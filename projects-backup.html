@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Title</title>
+        <title>Christian Edwards Home</title>
+
         <link rel="stylesheet" href="styles/loader.css"/>
     </head>
     <body>
-
 
         <header class="pageHeader">
             <!-- LOGO AND MENU WILL GOES HERE -->
@@ -26,7 +26,7 @@
                             <ul>
                                 <li><a href="index.html">Home</a></li>
                                 <li>
-                                    <a href="#" onclick="toggleSubMenu('tabNavigation')">About <i class="subCategoryCaret fa fa-chevron-left"></i></a>
+                                    <a href="#" onclick="toggleSubMenu('tabNavigation')"><i class="subCategoryCaret fa fa-chevron-left"></i> About </a>
 
                                     <ul class="subCategoryMenu hidden">
                                         <li><a href="biography.html">Biography</a></li>
@@ -34,7 +34,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#" onclick="toggleSubMenuArt('tabNavigation')">ArtWork <i class="subCategoryArtCaret fa fa-chevron-left"></i></a>
+                                    <a href="#" onclick="toggleSubMenuArt('tabNavigation')"><i class="subCategoryArtCaret fa fa-chevron-left"></i> ArtWork </a>
                                     <ul class="subCategoryArt hidden">
                                         <li><a href="projects.html">Projects</a></li>
                                         <li><a href="shop.html">Shop</a></li>
@@ -61,17 +61,17 @@
                                     <i class="fa fa-times" aria-hidden="true"></i>
                                 </a>
                             </div>
-                             <ul>
+                            <ul>
                                 <li><a href="index.html">Home</a></li>
                                 <li>
-                                    <a href="#" onclick="toggleSubMenu('mobileNavigation')"> About <i class="subCategoryCaret fa fa-chevron-left"></i></a>
+                                    <a href="#" onclick="toggleSubMenu('mobileNavigation')"><i class="subCategoryCaret fa fa-chevron-right"></i> About </a>
                                     <ul class="subCategoryMenu hidden">
                                         <li><a href="biography.html">Biography</a></li>
                                         <li><a href="workshops.html">Workshops</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#" onclick="toggleSubMenuArt('mobileNavigation')">Artwork <i class="subCategoryArtCaret fa fa-chevron-left"></i></a>
+                                    <a href="#" onclick="toggleSubMenuArt('mobileNavigation')"><i class="subCategoryArtCaret fa fa-chevron-right"></i> Artwork </a>
                                     <ul class="subCategoryArt hidden">
                                         <li><a href="projects.html">Projects</a></li>
                                         <li><a href="shop.html">Shop</a></li>
@@ -89,21 +89,15 @@
 
             <div class="topGap">&nbsp;</div>
 
-            <h1 class="txt-center">My Artwork Projects</h1>
+            <h1 class="txt-center pageHeaderName">Page Title</h1>
 
-            <section class="projectSection">
+            <section class="pageSection">
                 <div class="content content-center">
+                    <div class="pageDetails">
 
-                    <hr/>
-
-                    <div class="projectList">
+                        <!-- PAGE DATA WILL COME FROM WP, PLEASE MODIFY THERE -->
 
                     </div>
-
-                    <div class="loadMoreOption txt-center">
-                        <button class="btn regular" onclick="loadData()">Load More</button>
-                    </div>
-
                 </div>
             </section>
 
@@ -157,26 +151,8 @@
             </div>
         </footer>
 
+
         <script type="text/javascript" src="scripts/loader.js"></script>
-
-
-        <template id="projectTemplate">
-            <article class="project">
-                <div class="contentHolder">
-                    <h2 class="projectHeader txt-center"></h2>
-                    <div class="content">
-
-                    </div>
-                </div>
-            </article>
-        </template>
-
-        <div class="lightBox">
-            <div class="lightBox-content">
-                <p class="txt-right"><span class="close displayInlineBlock whiteCircle2 cursor-pointer"><i class="fa fa-times"></i></span></p>
-                <img src="" alt=""/>
-            </div>
-        </div>
 
     </body>
 </html>

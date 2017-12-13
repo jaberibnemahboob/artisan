@@ -77,6 +77,11 @@ i{color: var(--accentColor);}
 footer.pageFooter{border-top: 1px solid var(--accentColor);}
 iframe{width: 100% !important; padding: 0.5rem 2rem;}
 
+.project p:last-child:after{content: ''; display: block; clear: both;}
+.project img.alignleft { display: inline; float: left; margin: 2.5%; width: 35%; height: auto; }
+.project img.alignright { display: inline; float: right; margin: 2.5%; width: 35%; height: auto; }
+.project img.aligncenter,img.alignnone { display: block; float: none; margin: 2.5%; width: 95%; height: auto; }
+
 /************************ animations ************************/
 .arrow_carrot { margin-right: 1em; transform: rotate(90deg); animation: rotatingArrow ease 2s;}
 @keyframes rotatingArrow { to { transition: all 1s; } from { transition: all 1s; } }

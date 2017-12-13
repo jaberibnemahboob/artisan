@@ -2,8 +2,6 @@ let siteurl = "https://studkea.jprkopat.com/semester_2/theme0801/artisan//wp-jso
 let pagesID = {
     home : 6,
     biography : 8,
-    exhibitions : 10,
-    process : 12,
     workshops : 14,
     projects : 16,
     shop : 18,
@@ -12,10 +10,8 @@ let pagesID = {
 let pagesSlug = {
     home : "home",
     biography : "biography",
-    exhibitions : "exhibitions",
-    process : "process",
     workshops : "workshops",
-    projects : "luxury-artworks",
+    projects : "projects",
     shop : "souvenirs-shop",
     contact : "contact"
 }
@@ -149,6 +145,15 @@ function getPageBySlug(slug, callBack){
         if(typeof pages[0] !== "undefined") callBack(pages[0]);
     });
 }
+function getProjects(per_page, current_page, callBack){
+    if(typeof per_page == 'undefined') per_page = 100;
+    if(typeof current_page == 'undefined') current_page = 1;
+    loadJSONData(siteurl + "projects/?per_page="+per_page+"&page="+current_page+"&_embed", function(projects){
+
+        //CHANGE FUNCTION NAME TO SHOW LOADED INFORMATION
+        callBack(projects);
+    });
+}
 
 //FINALIZED SHOW FUNCTION
 function showSouvenirs_at_shop(souvenirs){
@@ -159,7 +164,6 @@ function showSouvenirs_at_shop(souvenirs){
     let list = document.querySelector(".productList");
     let template = document.querySelector("#productTemplate").content;
     souvenirs.forEach(function (souvenir){
-        console.log(souvenir);
         let clone = template.cloneNode(true);
 
         clone.querySelector(".view img").setAttribute("src", souvenir.acf.default_image);
@@ -358,6 +362,23 @@ function showPage_at_anyPage(page){
 
     fixIframeSize();
 }
+function showProjects_at_projects(projects){
+    //SHOW DATA
+    console.log(projects);
+
+    let list = document.querySelector(".projectList");
+    let template = document.querySelector("#projectTemplate").content;
+    projects.forEach(function (project){
+        let clone = template.cloneNode(true);
+
+        clone.querySelector(".projectHeader").textContent = project.title.rendered;
+        clone.querySelector(".content").innerHTML = project.content.rendered;
+
+        list.appendChild(clone);
+
+        enlargeImage(list.querySelector("article:last-child"));
+    });
+}
 
 
 
@@ -405,12 +426,10 @@ function loadData(){
         });
     }else if(window.location.href.indexOf("/biography.html") != -1){
         getPageBySlug(pagesSlug.biography,showPage_at_anyPage);
-    }else if(window.location.href.indexOf("/process.html") != -1){
-        getPageBySlug(pagesSlug.process,showPage_at_anyPage);
-    }else if(window.location.href.indexOf("/exhibitions.html") != -1){
-        getPageBySlug(pagesSlug.exhibitions,showPage_at_anyPage);
     }else if(window.location.href.indexOf("/workshops.html") != -1){
         getPageBySlug(pagesSlug.workshops,showPage_at_anyPage);
+    }else if(window.location.href.indexOf("/projects.html") != -1){
+        getProjects(loadPerPage, loadIndex, showProjects_at_projects);
     }
 }
 function loadCategoires(){

@@ -160,7 +160,8 @@ footer{padding: 1rem;}
 .heroSection>.contentHolder .content{height: var(--heroSectionHeight);  text-align: center; padding: var(--heroSectionPadding);}
 .heroSection>.contentHolder .content .box{ width: var(--heroSectionBoxWidth); height: auto; margin: var(--heroSectionMargin); background-color: rgba(85, 85, 85, 0.5); padding: 1em; box-shadow: var(--boxShadow);}
 
-#downCarat{ margin-left: 48%;}
+#downCarat{ text-align: center; position: relative; margin-top: -1.5rem;}
+#downCarat a{font-size: 1.5rem;}
 
 /* Position and Structure of .aboutSection */
 .aboutSection{padding: 3rem 1rem;}

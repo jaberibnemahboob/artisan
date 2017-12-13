@@ -14,6 +14,7 @@
 
 .txt-center{text-align: center;}
 .txt-left{text-align: left;}
+.txt-right{text-align: right;}
 
 .txt-xsm{font-size: 0.8rem;}
 .txt-sm{font-size: 0.9rem;}
@@ -22,8 +23,12 @@
 .txt-xlg{font-size: 1.1rem;}
 
 .width100{width: 100%;}
+.whiteCircle{background: #FFFFFF; box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.25); border-radius: 50%; padding: 0.5rem;}
+.whiteCircle2{background: #FFFFFF; box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.25); border-radius: 50%; padding: 0.5rem 0.8rem;}
 
 .general-border-top{border-top: 1px solid #DEDEDE;}
 .general-border-bottom{border-bottom: 1px solid #DEDEDE;}
 .general-border-left{border-left: 1px solid #DEDEDE;}
 .general-border-right{border-right: 1px solid #DEDEDE;}
+
+.cursor-pointer{cursor: pointer;}

@@ -42,6 +42,24 @@ document.querySelectorAll(".pageHeader>div.background").forEach(function(backgro
 
 
 
+// ENLARGE IMAGE ON CLICK
+// USE OF SIMPLE LIGHT BOX
+// ONLY CHANGE IMG SRC & ALT FROM LIGHT BOX
+// CLOSE LIGHTBOX ON CLICKING CLOSE
+function enlargeImage(targetObj){
+    targetObj.querySelectorAll("img").forEach(function(img){
+        img.classList.add("enlarge");
+        img.addEventListener("click",function(event){
+            document.querySelector(".lightBox img").setAttribute("src",img.getAttribute("src"));
+            document.querySelector(".lightBox img").setAttribute("alt",img.getAttribute("alt"));
+            document.querySelector(".lightBox").style.display = "block";
+        });
+    });
+}
+document.querySelector(".lightBox .close").addEventListener("click",function(){
+    document.querySelector(".lightBox").style.display = "none";
+});
+
 
 
 // HERO SECTION MOVING PARALLAX EFFECT

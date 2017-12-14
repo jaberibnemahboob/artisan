@@ -5,6 +5,7 @@
     /* FOR MOBILE VERTION */
     /* DISPLAY WIDTH LESS THAN 764PX */
     :root{
+        --ContentCenter: 100%;
         --logoSize: 4rem;
 
         --pageHeaderPadding: 0.5em;
@@ -47,6 +48,7 @@
     /* FOR TAB / IPAD VERSION */
     /* DISPLAY WIDTH LESS THAN 1200PX AND GREATER THAN 765PX */
     :root{
+        --ContentCenter: 80%;
         --logoSize: 4rem;
 
         --pageHeaderPadding: 0.75em;
@@ -90,6 +92,8 @@
     /* FOR TAB / IPAD VERSION */
     /* DISPLAY WIDTH GREATER THAN 1200PX */
     :root{
+
+        --ContentCenter: 60%;
         --logoSize: 4rem;
 
         --pageHeaderPadding: 1em;
@@ -135,6 +139,8 @@ section>hr, article>hr{margin: 1rem 0;}
 article{margin: 1rem 1rem;}
 header{}
 footer{padding: 1rem;}
+
+.content-center{width: var(--ContentCenter); margin: 0 auto;}
 
 /* Position and Structure of .pageHeader */
 .pageHeader{position: fixed; width: 100%; z-index: 1000;}

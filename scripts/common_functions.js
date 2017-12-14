@@ -1,7 +1,3 @@
-function bodyHeight(){
-    return Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight )
-}
-
 function setPageTitle(){
     fetch("jsons/common_data.json").then(res=>res.json()).then(setPageTitleNow).catch(function(event) {
         console.log(event);

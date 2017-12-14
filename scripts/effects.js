@@ -40,9 +40,14 @@ document.querySelectorAll(".pageHeader>div.background").forEach(function(backgro
         else if(opacity<defaultOpacity) opacity = defaultOpacity;
         else opacity = Math.round((opacity*100))/100;
         background.style.opacity = opacity;
-        document.querySelectorAll("nav.tabNavigation.atHomePage>ul>li>a").forEach(function(link){
-            if((opacity>0.5) && (link.classList.contains('invert'))) link.classList.remove('invert');
-            else if((opacity<0.5) && !(link.classList.contains('invert'))) link.classList.add('invert');
+        document.querySelectorAll(".atHomePage nav.tabNavigation>ul>li>a").forEach(function(link){
+            if((opacity>0.5) && (link.classList.contains('invert'))) {
+                link.classList.remove('invert');
+                document.querySelector("#logoText").classList.remove("invert");
+            }else if((opacity<0.5) && !(link.classList.contains('invert'))) {
+                link.classList.add('invert');
+                document.querySelector("#logoText").classList.add("invert");
+            }
         });
     }
 });
@@ -90,9 +95,11 @@ document.querySelector(".lightBox .close").addEventListener("click",function(){
 // BACKGROUND IMAGE OF HERO SECTION WILL MOVE BIT UPWORD WHILE SCROLLING UPWORD
 document.querySelectorAll(".movingParallax").forEach(function(item){
     //INITIALIZE VARIABLE AND EFFECT CONDITION
+
     let initialPositiion = 0;
     let documentHeight = bodyHeight();
     let calculatedPosition = initialPositiion;
+
     setNewBgPosition();
 
     //ACTION AND REACTION EFFECTS ON SCROLLING
@@ -105,7 +112,22 @@ document.querySelectorAll(".movingParallax").forEach(function(item){
         calculatedPosition = (initialPositiion + Math.round((document.scrollingElement.scrollTop / documentHeight * 200)));
         if(calculatedPosition > 100) calculatedPosition = 100;
         else if(calculatedPosition < 0) calculatedPosition = 0;
-        item.style.backgroundPosition = "30% "+ calculatedPosition +"%";
+
+        let vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        let moving_factor = 1;
+
+        if(vw < 764){
+            moving_factor = 1.5;
+            item.style.backgroundSize = "300%";
+            item.style.backgroundPosition = "25% "+ (calculatedPosition * moving_factor) +"%";
+        }else if(vw < 1200){
+            moving_factor = 1.2;
+            item.style.backgroundSize = "220%";
+            item.style.backgroundPosition = "25% "+ (calculatedPosition * moving_factor) +"%";
+        }else{
+            item.style.backgroundSize = "150%";
+            item.style.backgroundPosition = "35% "+ (calculatedPosition * moving_factor) +"%";
+        }
     }
 });
 

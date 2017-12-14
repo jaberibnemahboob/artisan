@@ -12,8 +12,7 @@
         --fontSizeLogo: 1em;
         --fontMarginLogo: -1.5em 0 0 3.8em;
 
-        --heroSectionBackground: url(../images/heroBackgroundSm.png);
-        --heroSectionHeight: 95vh;
+        --heroSectionHeight: 90vh;
         --heroSectionBoxWidth: 80vw;
         --heroSectionPadding: 5% 1%;
         --heroSectionMargin:30% 0 0 5%;
@@ -55,7 +54,6 @@
         --fontSizeLogo: 2em;
         --fontMarginLogo: -1.2em 0 0 1.9em;
 
-        --heroSectionBackground: url(../images/heroBackground.png);
         --heroSectionHeight: 95vh;
         --heroSectionBoxWidth: 50vw;
         --heroSectionPadding: 10% 7%;
@@ -100,7 +98,6 @@
         --fontSizeLogo: 2em;
         --fontMarginLogo: -1.2em 0 0 1.9em;
 
-        --heroSectionBackground: url(../images/heroBackground.png);
         --heroSectionHeight: 95vh;
         --heroSectionBoxWidth: 40vw;
         --heroSectionPadding: 14% 6%;
@@ -173,7 +170,7 @@ footer{padding: 1rem;}
 
 
 /* Position and Structure of .heroSection */
-.heroSection{height: var(--heroSectionHeight); background-image: var(--heroSectionBackground); width: 100%; background-repeat: no-repeat;}
+.heroSection{height: var(--heroSectionHeight); background-image: url(../images/heroBackground3000.jpg); width: 100%; background-repeat: no-repeat;}
 .heroSection>.contentHolder .content{height: var(--heroSectionHeight);  text-align: center; padding: var(--heroSectionPadding);}
 .heroSection>.contentHolder .content .box{ width: var(--heroSectionBoxWidth); height: auto; margin: var(--heroSectionMargin); background-color: rgba(85, 85, 85, 0.2); padding: 1em; box-shadow: var(--boxShadow);}
 

@@ -4,7 +4,6 @@ let jsList = [
     "scripts/navigation.js",
     "https://use.fontawesome.com/3bf73e391b.js",
     "scripts/effects.js",
-    "scripts/moving_parallax.js",
     "scripts/json_retriver.js",
     "scripts/remarke_owncarousel.js",
     "3rdparty/smooth-scroll/dist/js/smooth-scroll.min.js",

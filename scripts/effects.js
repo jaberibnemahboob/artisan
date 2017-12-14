@@ -105,7 +105,7 @@ document.querySelectorAll(".movingParallax").forEach(function(item){
         calculatedPosition = (initialPositiion + Math.round((document.scrollingElement.scrollTop / documentHeight * 200)));
         if(calculatedPosition > 100) calculatedPosition = 100;
         else if(calculatedPosition < 0) calculatedPosition = 0;
-        item.style.backgroundPosition = "50% "+ calculatedPosition +"%";
+        item.style.backgroundPosition = "30% "+ calculatedPosition +"%";
     }
 });
 

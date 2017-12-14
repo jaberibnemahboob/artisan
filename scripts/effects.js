@@ -1,3 +1,10 @@
+
+function bodyHeight(){
+    return Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight )
+}
+
+
+
 // STOP EMPTY LINK'S DEFAULT BEHAVIOR
 // ON CLICK IN GENERAL LINK FOLLOW THE HREF ATTRIBUTE, AND FOR EMPTY OR, # VALUE IT'S RELOAD / JUMP TO TOP
 // THIS EFFECT WILL STOP BEHAVING LIKE THAT

@@ -4,9 +4,9 @@ document.querySelectorAll(".movingParallax").forEach(function(item){
     let calculatedPosition = initialPositiion;
     window.addEventListener("scroll", function(event){
         calculatedPosition = (initialPositiion + Math.round((document.scrollingElement.scrollTop / documentHeight * 200)));
-        if(calculatedPosition > 100) calculatedPosition = 100;
+        if(calculatedPosition > 50) calculatedPosition = 100;
         else if(calculatedPosition < 0) calculatedPosition = 0;
-        item.style.backgroundPosition = "50% "+ calculatedPosition +"%";
+        item.style.backgroundPosition = "100% "+ calculatedPosition +"%";
     });
 });
 

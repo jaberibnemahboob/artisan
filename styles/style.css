@@ -1,4 +1,4 @@
-/* HERE ALL CUSTOM & STYLING THING WILL GOES */
+/* HERE ALL CUSTOM & STYLING THING WILL GO */
 @media screen and (max-width: 764px){
     /* FOR MOBILE VERTION */
     /* DISPLAY WIDTH LESS THAN 764PX */
@@ -15,7 +15,7 @@
     }
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1200px){
     /* FOR TAB / IPAD VERSION */
     /* DISPLAY WIDTH GREATER THAN 1051PX */
     :root{
@@ -25,10 +25,10 @@
 }
 
 /* pageHeader */
-.pageHeader>div.background{background: var(--backgroundColor); box-shadow: 0px 3px 12px rgba(0,0,0,.175);}
+.pageHeader>div.background{background: var(--backgroundColor); box-shadow: 0 3px 12px rgba(0,0,0,.175);}
 
 /* navigation => subNavigation */
-.pageHeader .navigationHolder nav.tabNavigation>ul>li ul{background: var(--backgroundColor); box-shadow: 0px 3px 12px rgba(0,0,0,.25);}
+.pageHeader .navigationHolder nav.tabNavigation>ul>li ul{background: var(--backgroundColor); box-shadow: 0 3px 12px rgba(0,0,0,.25);}
 
 /* contactSection */
 .contactSection article:nth-child(3){padding-left: 1rem; border-left: var(--contactSection2ndArticleBorderLeft);}
@@ -51,7 +51,6 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    overflow: hidden;
 }
 .lightBox-content {
     background-color: #fefefe;
